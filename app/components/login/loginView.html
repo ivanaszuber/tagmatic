@@ -1,0 +1,44 @@
+<div class="container page-login" ng-controller="loginController">
+  <div class="center">
+    <div class="card bordered z-depth-2"  style="margin:0% auto; max-width:400px;">
+      <div class="card-header">
+        <div class="brand-logo">
+          <div id="logo">
+            <div class="foot1"></div>
+            <div class="foot2"></div>
+            <div class="foot3"></div>
+            <div class="foot4"></div>
+          </div>
+          Tagmatic
+        </div>
+      </div>
+      <div class="card-content">
+        <form class="form-floating" ng-submit="login()">
+          <div class="form-group">
+            <label for="inputEmail" class="control-label">Email</label>
+            <input type="text" class="form-control" ng-model="model.email">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="control-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" ng-model="model.password">
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+          <div class="card-action clearfix">
+            <div class="pull-right">
+              <button type="button" class="btn btn-link black-text">Forgot password</button>
+              <button type="submit" class="btn btn-link black-text">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
