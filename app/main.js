@@ -11,7 +11,7 @@ define([
     'jquery-ui',
     'bootstrap',
     'appModule',
-    'appIncludes'
+    'config/appIncludes'
 ], function (require, $, ng, domReady) {
     'use strict';
 
