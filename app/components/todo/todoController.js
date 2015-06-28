@@ -9,13 +9,6 @@ define(['appModule'], function (module) {
 
         $scope.toDos = [];
 
-        $scope.todo = {
-            "id": "",
-            "is_complete": "",
-            "text": ""
-        };
-
-
         $scope.getToDos = function () {
             todoService.getToDoList()
                 .then(function (todos) {

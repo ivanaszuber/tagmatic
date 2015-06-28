@@ -36,7 +36,7 @@
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label ng-class="todo.style" >
+                                <label ng-class="todo.is_complete ? 'strike' : ''" >
                                     <input type="checkbox" ng-model="todo" ng-change="isComplete('{{todo.id}}')" name="todo">{{todo.text}}
                                 </label>
                             </div>
