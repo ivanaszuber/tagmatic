@@ -11,5 +11,16 @@ define([
     '../api/todoService',
     '../components/todo/todoModule',
     '../components/todo/todoController',
-    '../api/authService'
+    '../api/authService',
+
+    '../../lib/vendor/assets/js/directives/menu-toggle',
+    '../../lib/vendor/assets/js/directives/autofocus',
+    '../../lib/vendor/assets/js/directives/card-flip',
+    '../../lib/vendor/assets/js/directives/menu-link',
+    '../../lib/vendor/assets/js/directives/navbar-hover',
+    '../../lib/vendor/assets/js/directives/navbar-search',
+    '../../lib/vendor/assets/js/directives/todo-widget',
+    '../../lib/vendor/assets/js/vendors/ripples',
+    '../../lib/vendor/assets/js/app.filters'
+
 ])

@@ -61,7 +61,7 @@
     "gmaps": "0.4.18",
     "datatables": "latest",
     "bootstrap-validator": "latest",
-    "vendor":"git@github.com:ivanaszuber/tagmatic-vendor.git#0524c79a1833645bf98064bbcf7721e01e53cf9f"
+    "vendor":"git@github.com:ivanaszuber/tagmatic-vendor.git#733eb7b0a455541d04960314728d02651edd818a"
   },
   "appPath": "appModule",
   "resolutions": {

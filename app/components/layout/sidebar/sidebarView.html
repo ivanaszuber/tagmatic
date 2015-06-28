@@ -1,12 +1,9 @@
 <aside class="sidebar fixed">
     <div class="brand-logo">
         <div id="logo">
-            <div class="foot1"></div>
-            <div class="foot2"></div>
-            <div class="foot3"></div>
-            <div class="foot4"></div>
+            <img src="assets/img/logo.png" width="40px">
         </div>
-        Materialism
+        Tagmatic
     </div>
     <div class="user-logged-in">
         <div class="content">
@@ -18,7 +15,7 @@
         </div>
     </div>
     <ul class="menu-links" ng-cloak>
-        <a menu-link href="#/dashboard" icon="md md-blur-on">Dashboard</a>
+        <a data-ui-sref="app.home" icon="md md-blur-on">Home</a>
         <li menu-toggle path="/apps" name="APPS" icon="md md-camera">
             <a data-ui-sref="app.todo" name="Todo">
                 <span id="todosCount" class="pull-right badge z-depth-0" ng-bind="todosCount"></span>
