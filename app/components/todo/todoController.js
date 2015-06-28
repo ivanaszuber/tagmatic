@@ -19,7 +19,10 @@ define(['appModule'], function (module) {
 
         $scope.createToDo = function () {
 
-            todoService.createToDo($scope.todo);
+            todoService.createToDo($scope.todo).then(function(){
+                $scope.todo = '';
+                $scope.getToDos();
+            });
         }
 
 
