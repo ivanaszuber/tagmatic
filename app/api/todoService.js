@@ -13,7 +13,7 @@ define(['appModule'], function (module) {
             'getToDoList': function () {
                 return apiService.request({
                     'method': 'GET',
-                    'url': '/todos/'
+                    'url': '/todos'
                 })
             },
 

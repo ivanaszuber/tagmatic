@@ -10,19 +10,19 @@ define(['appModule'], function (module) {
         $scope.toDos = [];
 
         $scope.getToDos = function () {
-            todoService.getToDos()
+            todoService.getToDoList()
                 .then(function (todos) {
                    $scope.toDos = todos
                 })
         };
 
 
-        $scope.createToDo = function (isValid) {
+        $scope.createToDo = function () {
 
-            if (isValid) {
-                todoService.createToDo($scope.todo);
-            }
+            todoService.createToDo($scope.todo);
         }
 
+
+        $scope.getToDos();
     })
 });
