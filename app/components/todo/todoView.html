@@ -32,12 +32,12 @@
                         <li ng-repeat="todo in toDos">
                             <div class="checkbox">
                                 <span class="pull-right">
-                                <button type="button" class="btn btn-round btn-flat btn-default">
+                                <button type="button" class="btn btn-round btn-flat btn-default" ng-click="isComplete(todo.id)">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label class=" strike" >
-                                    <input type="checkbox" ng-model="todo" name="todo">{{todo.text}}
+                                <label ng-class="todo.style" >
+                                    <input type="checkbox" ng-model="todo" ng-change="isComplete('{{todo.id}}')" name="todo">{{todo.text}}
                                 </label>
                             </div>
                         </li>

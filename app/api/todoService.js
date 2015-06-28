@@ -20,10 +20,7 @@ define(['appModule'], function (module) {
             'getToDo': function (id) {
                 return apiService.request({
                     'method': 'GET',
-                    'url': '/todos/',
-                    params: {
-                        'id': id
-                    }
+                    'url': '/todos/' + id
                 })
             },
 
@@ -33,7 +30,18 @@ define(['appModule'], function (module) {
                     'url': '/todos',
                     'data': todo
                 })
+            },
+
+            'completeToDo': function (id, todo) {
+                return apiService.request({
+                    'method': 'PUT',
+                    'url': '/todos/' + id,
+                    data: todo
+                })
             }
-        };
+
+
+        }
     })
-});
+})
+;

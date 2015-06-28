@@ -10,7 +10,7 @@ define(['appModule'], function (module) {
 
 
         return {
-            'API_URL': 'http://localhost:5000/api/v1',
+            'API_URL': 'http://localhost:5005/api/v1',
             'request': function (args) {
                 $http.defaults.headers.common.Authorization = 'Basic ' + 'am9obmRvZUBnbWFpbC5jb206YWRtaW4=';
                 args = args || {};
