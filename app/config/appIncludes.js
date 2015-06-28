@@ -11,6 +11,7 @@ define([
     '../api/todoService',
     '../components/todo/todoModule',
     '../components/todo/todoController',
+    '../components/todo/todoItemController',
     '../api/authService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',

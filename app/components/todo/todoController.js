@@ -27,14 +27,15 @@ define(['appModule'], function (module) {
 
         $scope.isComplete = function (id) {
             todoService.getToDo(id).then(function(todo){
-                if (todo.is_complete) {
-                    todo.is_complete = false;
-                    todoService.completeToDo(id, todo)
+                $scope.todo = todo;
+                if ($scope.todo.is_complete) {
+                    $scope.todo.is_complete = false;
+                    todoService.completeToDo(id, $scope.todo)
                     $scope.style = '';
                 }
                 else {
-                    todo.is_complete = true;
-                    todoService.completeToDo(id, todo)
+                    $scope.todo.is_complete = true;
+                    todoService.completeToDo(id, $scope.todo)
                     $scope.style = 'strike';
                 };
             });

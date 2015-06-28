@@ -30,14 +30,14 @@
                 <div class="well white">
                     <ul class="list-unstyled">
                         <li ng-repeat="todo in toDos">
-                            <div class="checkbox">
+                            <div class="checkbox" ng-controller="todoItemController">
                                 <span class="pull-right">
-                                <button type="button" class="btn btn-round btn-flat btn-default" ng-click="isComplete(todo.id)">
+                                <button type="button" class="btn btn-round btn-flat btn-default">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
                                 <label ng-class="todo.is_complete ? 'strike' : ''" >
-                                    <input type="checkbox" ng-model="todo" ng-change="isComplete('{{todo.id}}')" name="todo">{{todo.text}}
+                                    <input type="checkbox" ng-model="todo.is_complete" ng-change="isComplete()" name="todo">{{todo.text}}
                                 </label>
                             </div>
                         </li>

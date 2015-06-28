@@ -33,11 +33,24 @@ define(['appModule'], function (module) {
             },
 
             'completeToDo': function (id, todo) {
-                return apiService.request({
-                    'method': 'PUT',
-                    'url': '/todos/' + id,
-                    data: todo
-                })
+                if (todo.is_complete) {
+                    return apiService.request({
+                        'method': 'PUT',
+                        'url': '/todos/' + id,
+                        data: todo
+                    })
+                } else {
+                    return apiService.request({
+                        'method': 'PUT',
+                        'url': '/todos/' + id,
+                        data: {
+                            'id': id,
+                            'is_complete': '',
+                            'text': todo.text
+                        }
+                    })
+                }
+
             }
 
 
