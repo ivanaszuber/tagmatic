@@ -7,5 +7,9 @@ define([
     '../components/home/homeModule',
     '../components/home/homeController',
     '../components/layout/layoutModule',
+    '../api/apiService',
+    '../api/todoService',
+    '../components/todo/todoModule',
+    '../components/todo/todoController',
     '../api/authService'
 ])

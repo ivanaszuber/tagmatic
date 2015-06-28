@@ -17,14 +17,13 @@ define([
 
         $stateProvider
             .state('app.todo', {
-                abstract: true,
-                reloadOnSearch: false,
+                url: '/todo',
                 views: {
                     content: {
                         templateUrl: 'components/todo/todoView.html',
+                        controller: 'todoController',
                         resolve: {
-                            deps: $couchPotatoProvider.resolveDependencies([
-                            ])
+                            deps: $couchPotatoProvider.resolveDependencies([])
                         }
                     }
                 }

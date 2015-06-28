@@ -6,7 +6,7 @@ define(['appModule'], function (module) {
     'use strict';
     module.service('authService', function authService($q, $http, $rootScope) {
 
-        var authService = {
+        return {
 
             'API_URL': 'http://localhost:5000/api/v1',
             'request': function (args) {
@@ -23,7 +23,7 @@ define(['appModule'], function (module) {
                     params: params,
                     data: data
                 })
-                    .success(angular.bind(this, function (data, status, headers, config) {
+                    .success(angular.bind(this, function (data, status) {
                         deferred.resolve(data, status);
                     }))
                     .error(angular.bind(this, function (data, status, headers, config) {
@@ -52,12 +52,11 @@ define(['appModule'], function (module) {
                 return this.request({
                     'method': "POST",
                     'url': "/logout"
-                }).then(function (data) {
+                }).then(function () {
                     $rootScope.$broadcast("authService.logged_out");
                 });
             }
 
-        }
-        return authService;
+        };
     })
 });

@@ -20,7 +20,7 @@
     <ul class="menu-links" ng-cloak>
         <a menu-link href="#/dashboard" icon="md md-blur-on">Dashboard</a>
         <li menu-toggle path="/apps" name="APPS" icon="md md-camera">
-            <a menu-link href="#/apps/todo" name="Todo">
+            <a data-ui-sref="app.todo" name="Todo">
                 <span id="todosCount" class="pull-right badge z-depth-0" ng-bind="todosCount"></span>
                 Todo
             </a>

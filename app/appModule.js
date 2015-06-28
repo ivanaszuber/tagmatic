@@ -19,6 +19,7 @@ define([
 
         'loginModule',
         'layoutModule',
+        'todoModule',
         'homeModule'
     ]);
 

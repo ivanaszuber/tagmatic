@@ -17,7 +17,7 @@ define(['appModule'], function (module) {
         };
 
 
-        $scope.create = function (isValid) {
+        $scope.createToDo = function (isValid) {
 
             if (isValid) {
                 todoService.createToDo($scope.todo);
@@ -25,5 +25,4 @@ define(['appModule'], function (module) {
         }
 
     })
-})
-;
+});
