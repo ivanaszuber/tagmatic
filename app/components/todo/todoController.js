@@ -25,23 +25,11 @@ define(['appModule'], function (module) {
             });
         };
 
-        $scope.isComplete = function (id) {
-            todoService.getToDo(id).then(function(todo){
-                $scope.todo = todo;
-                if ($scope.todo.is_complete) {
-                    $scope.todo.is_complete = false;
-                    todoService.completeToDo(id, $scope.todo)
-                    $scope.style = '';
-                }
-                else {
-                    $scope.todo.is_complete = true;
-                    todoService.completeToDo(id, $scope.todo)
-                    $scope.style = 'strike';
-                };
-            });
-
+        $scope.delete = function(){
+            todoService.deleteCompleted().then(function(data){
+                $scope.toDos = data;
+            })
         }
-
 
         $scope.getToDos();
     })

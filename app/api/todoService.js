@@ -32,6 +32,13 @@ define(['appModule'], function (module) {
                 })
             },
 
+            'deleteCompleted': function () {
+                return apiService.request({
+                    'method': 'DELETE',
+                    'url': '/todos'
+                })
+            },
+
             'completeToDo': function (id, todo) {
                 if (todo.is_complete) {
                     return apiService.request({
