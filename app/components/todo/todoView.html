@@ -20,10 +20,12 @@
                 </div>
             </div>
             <div class="col-md-12 filters">
-                <div class="btn-group" role="group" aria-label="Filter todo's">
-                    <button class="btn btn-default filter active">All</button>
-                    <button class="btn btn-default filter">Active</button>
-                    <button class="btn btn-default filter">Completed</button>
+                <div class="btn-group" role="group" data-toggle="buttons" aria-label="Filter todo's">
+                    <label class="btn btn-default" ng-class="{active : isActive(filter)}"
+                           ng-repeat="filter in filters" ng-click="setFilter(filter)" ui-sref-active="active">
+                        <input type="radio" name="tab">
+                        {{filter}}
+                    </label>
                 </div>
             </div>
             <div class="col-md-12">

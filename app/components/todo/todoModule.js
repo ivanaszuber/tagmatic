@@ -4,8 +4,9 @@
 define([
     'angular',
     'angular-couch-potato',
-    'angular-ui-router'
-], function (ng, couchPotato) {
+    'angular-ui-router',
+    'lodash'
+], function (ng, couchPotato, _) {
 
     "use strict";
 

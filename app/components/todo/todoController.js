@@ -9,11 +9,31 @@ define(['appModule'], function (module) {
 
         $scope.toDos = [];
 
-        $scope.getToDos = function () {
-            todoService.getToDoList()
-                .then(function (todos) {
-                    $scope.toDos = todos
-                })
+        $scope.filters = ['All', 'Active', 'Completed'];
+
+        $scope.activeFilter = 'All';
+
+        $scope.isActive = function (filter) {
+            return $scope.activeFilter == filter;
+        };
+
+        $scope.setFilter = function (filter) {
+
+            $scope.activeFilter = filter;
+
+            if (filter != 'All') {
+                todoService.getToDoList()
+                    .then(function (todos) {
+                        $scope.toDos = _.pluck(_.where(todos, {'status': filter}));
+                    });
+
+            } else {
+                todoService.getToDoList()
+                    .then(function (todos) {
+                        $scope.toDos = todos
+                    });
+
+            }
         };
 
 
@@ -21,16 +41,16 @@ define(['appModule'], function (module) {
 
             todoService.createToDo($scope.todo).then(function () {
                 $scope.todo = '';
-                $scope.getToDos();
+                $scope.setFilter('All');
             });
         };
 
-        $scope.delete = function(){
-            todoService.deleteCompleted().then(function(data){
+        $scope.delete = function () {
+            todoService.deleteCompleted().then(function (data) {
                 $scope.toDos = data;
             })
         }
 
-        $scope.getToDos();
+        $scope.setFilter('All');
     })
 });
