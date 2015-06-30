@@ -25,12 +25,22 @@
     </div>
 </div>
 
-<script type="text/ng-template" id="buttons.html">
+<script type="text/ng-template" id="editButton.html">
     <div class="ui-grid-cell-contents">
         <button ng-click="$root.editContact(COL_FIELD)" type="button" class="btn btn-link btn-round" data-title="Edit item">
             <i class="md md-edit"></i>
-        </button><button type="button" class="btn btn-link btn-round" data-title="View item" ng-click="viewContact()">
-        <i class="md md-search"></i></button><button type="button" class="btn btn-link btn-round" data-title="Delete item" ng-click="deleteContact()">
+        </button>
+    </div>
+</script>
+<script type="text/ng-template" id="viewButton.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.viewContact(COL_FIELD)" type="button" class="btn btn-link btn-round" data-title="View item">
+        <i class="md md-search"></i></button>
+    </div>
+</script>
+<script type="text/ng-template" id="deleteButton.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.deleteContact(COL_FIELD)"  type="button" class="btn btn-link btn-round" data-title="Delete item">
         <i class="md md-delete"></i></button>
     </div>
 </script>

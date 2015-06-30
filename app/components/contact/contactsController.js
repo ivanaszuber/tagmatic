@@ -13,8 +13,10 @@ define(['appModule'], function (module) {
             columnDefs: [
                 {
                     field: 'image_url',
-                    displayName:'',
-                    width:60,
+                    displayName: '',
+                    width: 60,
+                    enableColumnMenu:false,
+                    enableSorting:false,
                     cellTemplate: '<div class="ui-grid-cell-contents" class="f20"><i class="md md-settings-backup-restore yellow lighten-2 icon-color"></i></div>'
                 },
                 {field: 'first_name', displayName: 'First Name'},
@@ -23,12 +25,34 @@ define(['appModule'], function (module) {
                 {field: 'text', displayName: 'Summary'},
                 {
                     field: 'id',
-                    displayName: 'id',
-                    cellTemplate: 'buttons.html'
+                    displayName: '',
+                    cellTemplate: 'editButton.html',
+                    width:40,
+                    enableColumnMenu:false,
+                    enableSorting:false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'viewButton.html',
+                    width:40,
+                    enableColumnMenu:false,
+                    enableSorting:false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'deleteButton.html',
+                    width:40,
+                    enableColumnMenu:false,
+                    enableSorting:false
                 }
             ],
             data: 'contacts',
             multiSelect: true,
+
+            enableColumnMenu:false,
+            //enableColumnMenus:false,
             enableHorizontalScrollbar: false,
             enableVerticalScrollbar: false
         };
@@ -45,7 +69,7 @@ define(['appModule'], function (module) {
         $rootScope.editContact =
             function (id) {
                 $modal.open({
-                    templateUrl: 'components/contact/contactItemView.html',
+                    templateUrl: 'components/contact/contactEditView.html',
                     controller: function ($scope, $modalInstance) {
                         contactService.getContact(id)
                             .then(function (contact) {
@@ -53,11 +77,8 @@ define(['appModule'], function (module) {
                             });
 
                         $scope.submitted = false;
-
                         $scope.edit = function (isValid) {
-
                             $scope.submitted = true;
-
                             if (isValid) {
                                 contactService.editContact(id, $scope.contact).then(function () {
                                     $modalInstance.close();
@@ -65,7 +86,6 @@ define(['appModule'], function (module) {
                                 });
                             }
                             ;
-
                         };
 
                         $scope.closeModal = function () {
@@ -73,12 +93,28 @@ define(['appModule'], function (module) {
                         }
                     }
                 });
-            }
+            };
 
+        $rootScope.viewContact =
+            function (id) {
+                $modal.open({
+                    templateUrl: 'components/contact/contactViewView.html',
+                    controller: function ($scope, $modalInstance) {
+                        contactService.getContact(id)
+                            .then(function (contact) {
+                                $scope.contact = contact;
+                            });
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            };
 
         $scope.createContact = function () {
             $modal.open({
-                templateUrl: 'components/contact/contactItemView.html',
+                templateUrl: 'components/contact/contactCreateView.html',
                 controller: function ($scope, $modalInstance) {
                     $scope.contact = {};
                     $scope.submitted = false;
