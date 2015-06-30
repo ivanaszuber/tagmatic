@@ -10,7 +10,7 @@ define(['appModule'], function (module) {
         $scope.contacts = [];
 
         $scope.gridContacts = {
-            columnDefs: [{field: 'getFirstAndLastName()', displayName: 'Name'},
+            columnDefs: [
                 {field: 'first_name', displayName: 'First Name'},
                 {field: 'last_name', displayName: 'Last Name'},
                 {field: 'created_at', displayName: 'Create On', cellFilter: "date:'yyyy-MM-dd'"},
