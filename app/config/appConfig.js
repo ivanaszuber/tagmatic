@@ -17,7 +17,7 @@ var require = {
         'angular-bootstrap': ['../lib/angular-bootstrap/ui-bootstrap-tpls.min'],
         'angular-couch-potato': ['../lib/angular-couch-potato/dist/angular-couch-potato'],
         'lodash': ['../lib/lodash/dist/lodash.min'],
-        'ui.grid': ['../lib/angular-ui-grid/ui-grid.min'],
+        'ui.grid': ['../lib/angular-ui-grid/ui-grid'],
         'modules-includes': 'appIncludes'
     },
     shim: {

@@ -24,6 +24,21 @@ define(['appModule'], function (module) {
                     'data': contact
                 })
             },
+
+            'editContact': function (id, contact) {
+                return apiService.request({
+                    'method': 'PUT',
+                    'url': '/contacts/' + id,
+                    data: contact
+                })
+            },
+
+            'getContact': function (id) {
+                return apiService.request({
+                    'method': 'GET',
+                    'url': '/contacts/' + id
+                })
+            }
         }
     })
 })

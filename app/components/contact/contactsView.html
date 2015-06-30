@@ -1,4 +1,4 @@
-<div class="main-container" ng-controller="contactsController">
+<div class="main-container" ng-controller="contactsController as Contact">
     <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="">
         <section>
             <div class="page-header">
@@ -13,7 +13,7 @@
         <div>
             <div class="table-responsive well no-padding white no-margin">
                 <h3 class="table-title">90 Items available</h3>
-                <div class="gridStyle"  ui-grid="gridContacts" ui-grid-selection ui-grid-auto-resize>
+                <div class="gridStyle"  ui-grid="gridContacts" ui-grid-selection ui-grid-auto-resize external-scopes="clickHandler" >
                 </div>
             </div>
             <div class="footer-buttons">
@@ -24,3 +24,13 @@
         </div>
     </div>
 </div>
+
+<script type="text/ng-template" id="buttons.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.editContact(COL_FIELD)" type="button" class="btn btn-link btn-round" data-title="Edit item">
+            <i class="md md-edit"></i>
+        </button><button type="button" class="btn btn-link btn-round" data-title="View item" ng-click="viewContact()">
+        <i class="md md-search"></i></button><button type="button" class="btn btn-link btn-round" data-title="Delete item" ng-click="deleteContact()">
+        <i class="md md-delete"></i></button>
+    </div>
+</script>
