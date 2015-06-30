@@ -61,6 +61,7 @@
     "gmaps": "0.4.18",
     "datatables": "latest",
     "bootstrap-validator": "latest",
+    "angular-ui-grid": "~3.0.0-rc.21",
     "vendor":"git@github.com:ivanaszuber/tagmatic-vendor.git#733eb7b0a455541d04960314728d02651edd818a"
   },
   "appPath": "appModule",

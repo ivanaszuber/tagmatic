@@ -12,7 +12,10 @@ define([
     '../components/todo/todoModule',
     '../components/todo/todoController',
     '../components/todo/todoItemController',
+    '../components/contact/contactsModule',
+    '../components/contact/contactsController',
     '../api/authService',
+    '../api/contactService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',
     '../../lib/vendor/assets/js/directives/autofocus',

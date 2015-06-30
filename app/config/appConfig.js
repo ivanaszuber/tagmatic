@@ -17,6 +17,7 @@ var require = {
         'angular-bootstrap': ['../lib/angular-bootstrap/ui-bootstrap-tpls.min'],
         'angular-couch-potato': ['../lib/angular-couch-potato/dist/angular-couch-potato'],
         'lodash': ['../lib/lodash/dist/lodash.min'],
+        'ui.grid': ['../lib/angular-ui-grid/ui-grid.min'],
         'modules-includes': 'appIncludes'
     },
     shim: {
@@ -26,6 +27,7 @@ var require = {
         'angular-bootstrap': {deps: ['angular']},
         'angular-ui-router': {deps: ['angular']},
         'jquery-ui': { deps: ['jquery']},
+        'ui.grid': {deps: ['angular']},
         'ngRoute': {deps: ['angular']},
         'angular-couch-potato': {deps: ['angular']},
         'bootstrap': {deps: ['jquery']},

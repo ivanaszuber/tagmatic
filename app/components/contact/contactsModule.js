@@ -10,7 +10,13 @@ define([
 
     "use strict";
 
-    var contactsModule = ng.module('contactsModule', ['ui.router']);
+    var contactsModule = ng.module('contactsModule', [
+        'ui.router',
+        'ui.grid',
+        'ui.grid.selection',
+        'ui.grid.autoResize',
+        'ui.bootstrap'
+    ]);
 
     couchPotato.configureApp(contactsModule);
 

@@ -8,18 +8,21 @@ define([
     'angular-ui-router',
     'angular-resource',
     'angular-bootstrap',
-    'angular-sanitize'
+    'angular-sanitize',
+    'ui.grid'
 ], function (ng, couchPotato) {
 
     var appModule = ng.module('appModule', [
         'scs.couch-potato',
         'ui.router',
         'ui.bootstrap',
+        'ui.grid',
         'ngResource',
 
         'loginModule',
         'layoutModule',
         'todoModule',
+        'contactsModule',
         'homeModule'
     ]);
 
