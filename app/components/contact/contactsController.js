@@ -5,7 +5,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('contactsController', function ($scope, $state, contactService) {
+    module.registerController('contactsController', function ($scope, $state, contactService, $modal, $rootScope) {
 
         $scope.contacts = [];
 
@@ -21,9 +21,42 @@ define(['appModule'], function (module) {
             enableVerticalScrollbar: false
         };
 
-        contactService.getContactList()
-            .then(function (contacts) {
-                $scope.contacts = contacts;
+        //this needs to be refactored
+        $rootScope.getContacts = function(){
+            contactService.getContactList()
+                .then(function (contacts) {
+                    $scope.contacts = contacts;
+                });
+        };
+
+        $scope.createContact = function () {
+
+            $modal.open({
+                templateUrl: 'components/contact/contactItemView.html',
+                controller: function($scope, $modalInstance){
+                    $scope.contact = {};
+                    $scope.submitted = false;
+
+                    $scope.create = function (isValid) {
+
+                        $scope.submitted = true;
+
+                        if (isValid) {
+                            contactService.createContact($scope.contact).then(function(){
+                                $modalInstance.close();
+                                $rootScope.getContacts();
+                            });
+                        };
+
+                    };
+
+                    $scope.closeModal = function(){
+                        $modalInstance.close();
+                    }
+                }
             });
+        };
+
+        $scope.getContacts();
     })
 });

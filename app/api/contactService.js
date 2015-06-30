@@ -15,7 +15,15 @@ define(['appModule'], function (module) {
                     'method': 'GET',
                     'url': '/contacts'
                 })
-            }
+            },
+
+            'createContact': function (contact) {
+                return apiService.request({
+                    'method': 'POST',
+                    'url': '/contacts',
+                    'data': contact
+                })
+            },
         }
     })
 })

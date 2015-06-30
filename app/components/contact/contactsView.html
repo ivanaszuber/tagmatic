@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" ng-controller="contactsController">
     <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="">
         <section>
             <div class="page-header">
@@ -19,7 +19,7 @@
             <div class="footer-buttons">
                 <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)" data-toggle="tooltip"><i class="md md-delete"></i></div>
                 <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top" data-title="Scroll to top" data-toggle="tooltip"><i class="md md-arrow-drop-up"></i></div>
-                <div class="btn btn-primary btn-round btn-lg" data-title="New Item" data-toggle="tooltip"><i class="md md-add"></i></div>
+                <div class="btn btn-primary btn-round btn-lg" data-title="New Item" data-toggle="tooltip" ng-click="createContact()"><i class="md md-add"></i></div>
             </div>
         </div>
     </div>

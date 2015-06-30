@@ -1,0 +1,55 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+    </button>
+    <h4 class="modal-title">
+        Create New Contact
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" ng-submit="create(contactForm.$valid)" novalidate
+          name="contactForm">
+        <div class="form-group"
+             ng-class="{ 'has-error' : contactForm.firstName.$invalid && !contactForm.firstName.$pristine && submitted || contactForm.firstName.$error.required && submitted}">
+            <label class="col-sm-3 control-label">First name:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="contact.first_name" name="firstName" required>
+                <p ng-show="contactForm.firstName.$error.required && submitted" class="help-block">First name is required.</p>
+                <p ng-show="contactForm.firstName.$invalid && !contactForm.firstName.$pristine" class="help-block">First name is
+                    required.</p>
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : contactForm.lastName.$invalid && !contactForm.lastName.$pristine && submitted || contactForm.lastName.$error.required && submitted}">
+            <label class="col-sm-3 control-label">Last name:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="contact.last_name" name="lastName" required>
+                <p ng-show="contactForm.lastName.$error.required && submitted" class="help-block">Last name is required.</p>
+                <p ng-show="contactForm.lastName.$invalid && !contactForm.lastName.$pristine" class="help-block">Last name is
+                    required.</p>
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : contactForm.text.$invalid && !contactForm.text.$pristine && submitted || contactForm.text.$error.required && submitted}">
+            <label class="col-sm-3 control-label">Summary:</label>
+
+            <div class="col-sm-9">
+                <textarea type="text" class="form-control" ng-model="contact.text" name="text" required></textarea>
+                <p ng-show="contactForm.text.$error.required && submitted" class="help-block">Text is required.</p>
+                <p ng-show="contactForm.text.$invalid && !contactForm.text.$pristine" class="help-block">Text is
+                    required.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+
+            <button type="submit" class="btn btn-primary">
+                Confirm
+            </button>
+            <button type="button" class="btn btn-default" ng-click="closeModal()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
