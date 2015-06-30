@@ -1,5 +1,5 @@
 # Tagmatic
 
-**Personal Project**
+_Personal Project_
 
 Work in progress....
