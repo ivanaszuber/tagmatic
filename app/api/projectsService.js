@@ -31,6 +31,14 @@ define(['appModule'], function (module) {
                     'url': '/projects/' + id
                 })
             },
+
+            'editProject': function (id, project) {
+                return apiService.request({
+                    'method': 'PUT',
+                    'url': '/projects/' + id,
+                    data: project
+                })
+            }
         }
     })
 })
