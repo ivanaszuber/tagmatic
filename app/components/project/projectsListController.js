@@ -94,6 +94,35 @@ define(['appModule'], function (module) {
             });
         };
 
+        $rootScope.editProject =
+            function (id) {
+                $modal.open({
+                    templateUrl: 'components/project/projectEditView.html',
+                    controller: function ($scope, $modalInstance) {
+                        projectsService.getProject(id)
+                            .then(function (project) {
+                                $scope.project = project;
+                            });
+
+                        $scope.submitted = false;
+                        $scope.edit = function (isValid) {
+                            $scope.submitted = true;
+                            if (isValid) {
+                                projectsService.editProject(id, $scope.project).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.getProjects();
+                                });
+                            }
+                            ;
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            };
+
         $scope.getProjects();
 
     })
