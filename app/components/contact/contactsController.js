@@ -9,6 +9,8 @@ define(['appModule'], function (module) {
 
         $scope.contacts = [];
 
+        $scope.selected = [];
+
         $scope.gridContacts = {
             columnDefs: [
                 {
@@ -50,11 +52,20 @@ define(['appModule'], function (module) {
             ],
             data: 'contacts',
             multiSelect: true,
-
             enableColumnMenu: false,
-            //enableColumnMenus:false,
             enableHorizontalScrollbar: false,
             enableVerticalScrollbar: false
+        };
+
+        $scope.gridContacts.onRegisterApi = function (gridApi) {
+            $scope.gridApi = gridApi;
+            gridApi.selection.on.rowSelectionChanged($scope, function (row) {
+                contactService.getContact(row.entity.id)
+                    .then(function (contact) {
+                        contact.is_selected = true;
+                        $scope.selected.push(contact);
+                    });
+            });
         };
 
         //this needs to be refactored
@@ -65,6 +76,14 @@ define(['appModule'], function (module) {
                     $scope.contactsNumber = contacts.length;
                 });
         };
+
+        $scope.deleteContacts = function () {
+            angular.forEach($scope.selected, function (contact) {
+                contactService.deleteContact(contact.id).then(function () {
+                    $rootScope.getContacts();
+                })
+            })
+        }
 
 
         $rootScope.editContact =
