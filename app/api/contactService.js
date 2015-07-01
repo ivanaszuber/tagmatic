@@ -38,7 +38,15 @@ define(['appModule'], function (module) {
                     'method': 'GET',
                     'url': '/contacts/' + id
                 })
+            },
+
+            'deleteContact': function (id) {
+                return apiService.request({
+                    'method': 'DELETE',
+                    'url': '/contacts/' + id
+                })
             }
+
         }
     })
 })

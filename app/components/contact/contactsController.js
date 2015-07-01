@@ -15,8 +15,8 @@ define(['appModule'], function (module) {
                     field: 'image_url',
                     displayName: '',
                     width: 60,
-                    enableColumnMenu:false,
-                    enableSorting:false,
+                    enableColumnMenu: false,
+                    enableSorting: false,
                     cellTemplate: '<div class="ui-grid-cell-contents" class="f20"><i class="md md-settings-backup-restore yellow lighten-2 icon-color"></i></div>'
                 },
                 {field: 'first_name', displayName: 'First Name'},
@@ -27,31 +27,31 @@ define(['appModule'], function (module) {
                     field: 'id',
                     displayName: '',
                     cellTemplate: 'editButton.html',
-                    width:40,
-                    enableColumnMenu:false,
-                    enableSorting:false
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
                 },
                 {
                     field: 'id',
                     displayName: '',
                     cellTemplate: 'viewButton.html',
-                    width:40,
-                    enableColumnMenu:false,
-                    enableSorting:false
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
                 },
                 {
                     field: 'id',
                     displayName: '',
                     cellTemplate: 'deleteButton.html',
-                    width:40,
-                    enableColumnMenu:false,
-                    enableSorting:false
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
                 }
             ],
             data: 'contacts',
             multiSelect: true,
 
-            enableColumnMenu:false,
+            enableColumnMenu: false,
             //enableColumnMenus:false,
             enableHorizontalScrollbar: false,
             enableVerticalScrollbar: false
@@ -138,6 +138,16 @@ define(['appModule'], function (module) {
                     }
                 }
             });
+        };
+
+        $rootScope.deleteContact = function (id) {
+            contactService.getContact(id)
+                .then(function (contact) {
+                    $scope.contact = contact;
+                    contactService.deleteContact(id).then(function (data) {
+                        $scope.contacts = data;
+                    })
+                });
         };
 
         $scope.getContacts();
