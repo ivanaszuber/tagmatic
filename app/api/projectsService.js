@@ -23,7 +23,14 @@ define(['appModule'], function (module) {
                     'url': '/projects',
                     'data': project
                 })
-            }
+            },
+
+            'getProject': function (id) {
+                return apiService.request({
+                    'method': 'GET',
+                    'url': '/projects/' + id
+                })
+            },
         }
     })
 })
