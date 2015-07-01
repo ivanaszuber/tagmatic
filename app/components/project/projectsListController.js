@@ -5,10 +5,9 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('projectsListController', function ($scope, $state, projectsService, $modal, $rootScope) {
+    module.registerController('projectsListController', function ($scope, $state, projectsService, contactService, $modal, $rootScope) {
 
         $scope.projects = [];
-
         $scope.selected = [];
 
         $scope.gridProjects = {
@@ -16,31 +15,31 @@ define(['appModule'], function (module) {
                 {field: 'id', displayName: 'ID'},
                 {field: 'name', displayName: 'Name'},
                 {field: 'description', displayName: 'Description'},
-                {field: 'user', displayName: 'Project Lead'},
-                {
-                    field: 'id',
-                    displayName: '',
-                    cellTemplate: 'editButton.html',
-                    width: 40,
-                    enableColumnMenu: false,
-                    enableSorting: false
-                },
-                {
-                    field: 'id',
-                    displayName: '',
-                    cellTemplate: 'viewButton.html',
-                    width: 40,
-                    enableColumnMenu: false,
-                    enableSorting: false
-                },
-                {
-                    field: 'id',
-                    displayName: '',
-                    cellTemplate: 'deleteButton.html',
-                    width: 40,
-                    enableColumnMenu: false,
-                    enableSorting: false
-                }
+                {field: 'getFirstAndLastName()', displayName: 'Project Lead'},
+                //{
+                //    field: 'id',
+                //    displayName: '',
+                //    cellTemplate: 'editButton.html',
+                //    width: 40,
+                //    enableColumnMenu: false,
+                //    enableSorting: false
+                //},
+                //{
+                //    field: 'id',
+                //    displayName: '',
+                //    cellTemplate: 'viewButton.html',
+                //    width: 40,
+                //    enableColumnMenu: false,
+                //    enableSorting: false
+                //},
+                //{
+                //    field: 'id',
+                //    displayName: '',
+                //    cellTemplate: 'deleteButton.html',
+                //    width: 40,
+                //    enableColumnMenu: false,
+                //    enableSorting: false
+                //}
             ],
             data: 'projects',
             multiSelect: true,
@@ -63,7 +62,11 @@ define(['appModule'], function (module) {
                     $scope.project = {};
                     $scope.submitted = false;
 
-                    $scope.createProject = function (isValid) {
+                    contactService.getContactList().then(function (data) {
+                        $scope.users = data;
+                    })
+
+                    $scope.newProject = function (isValid) {
 
                         $scope.submitted = true;
 
@@ -74,7 +77,6 @@ define(['appModule'], function (module) {
                             });
                         }
                         ;
-
                     };
 
                     $scope.closeModal = function () {
@@ -83,6 +85,8 @@ define(['appModule'], function (module) {
                 }
             });
         };
+
+        $scope.getProjects();
 
     })
 });

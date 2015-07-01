@@ -7,7 +7,7 @@
     </h4>
 </div>
 <div class="modal-body">
-    <form class="form-horizontal" ng-submit="createProject(contactForm.$valid)" novalidate
+    <form class="form-horizontal" ng-submit="newProject(projectForm.$valid)" novalidate
           name="projectForm">
         <div class="form-group"
              ng-class="{ 'has-error' : projectForm.name.$invalid && !projectForm.name.$pristine && submitted || projectForm.name.$error.required && submitted}">
@@ -34,6 +34,20 @@
 
                 <p ng-show="projectForm.description.$invalid && !projectForm.description.$pristine" class="help-block">
                     Description is
+                    required.</p>
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : projectForm.select.$invalid && !projectForm.select.$pristine }">
+            <label class="col-sm-2 control-label">Project Lead:</label>
+
+            <div class="col-sm-10">
+                <select data-smart-select2 class="select2" ng-model="project.user_id" name="select"
+                        ng-required="true">
+                    <option ng-repeat="user in users" value="{{user.id}}">{{user.first_name}}</option>
+                </select>
+
+                <p ng-show="projectForm.select.$invalid && !projectForm.select.$pristine" class="help-block">User is
                     required.</p>
             </div>
         </div>
