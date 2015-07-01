@@ -62,6 +62,7 @@ define(['appModule'], function (module) {
             contactService.getContactList()
                 .then(function (contacts) {
                     $scope.contacts = contacts;
+                    $scope.contactsNumber = contacts.length;
                 });
         };
 
