@@ -27,7 +27,7 @@ define([
                 url: '/contact',
                 views: {
                     content: {
-                        templateUrl: 'components/contact/contactsView.html',
+                        templateUrl: 'components/contact/contactsListView.html',
                         controller: 'contactsController',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([])
