@@ -49,11 +49,19 @@ define(['appModule'], function (module) {
         };
 
         $rootScope.getProjects = function () {
-            projectsService.getProjectList()
-                .then(function (projects) {
-                    $scope.projects = projects;
-                });
+            projectsService.getProjectList().then(function (projects) {
+                angular.forEach(projects, function (project) {
+                    contactService.getContact(project.user_id).then(function (user) {
+                        project.user = user;
+                        project.getFirstAndLastName = function () {
+                            return user.first_name + ' ' + user.last_name;
+                        }
+                        $scope.projects.push(project);
+                    });
+                })
+            });
         };
+
 
         $scope.createProject = function () {
             $modal.open({
