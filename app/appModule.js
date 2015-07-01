@@ -23,7 +23,8 @@ define([
         'layoutModule',
         'todoModule',
         'contactsModule',
-        'homeModule'
+        'homeModule',
+        'projectModule'
     ]);
 
     couchPotato.configureApp(appModule);
