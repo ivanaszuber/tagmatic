@@ -16,30 +16,30 @@ define(['appModule'], function (module) {
                 {field: 'name', displayName: 'Name'},
                 {field: 'description', displayName: 'Description'},
                 {field: 'getFirstAndLastName()', displayName: 'Project Lead'},
-                //{
-                //    field: 'id',
-                //    displayName: '',
-                //    cellTemplate: 'editButton.html',
-                //    width: 40,
-                //    enableColumnMenu: false,
-                //    enableSorting: false
-                //},
-                //{
-                //    field: 'id',
-                //    displayName: '',
-                //    cellTemplate: 'viewButton.html',
-                //    width: 40,
-                //    enableColumnMenu: false,
-                //    enableSorting: false
-                //},
-                //{
-                //    field: 'id',
-                //    displayName: '',
-                //    cellTemplate: 'deleteButton.html',
-                //    width: 40,
-                //    enableColumnMenu: false,
-                //    enableSorting: false
-                //}
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'editButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'viewButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'deleteButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
+                }
             ],
             data: 'projects',
             multiSelect: true,

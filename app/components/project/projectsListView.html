@@ -31,3 +31,25 @@
         </div>
     </div>
 </div>
+<script type="text/ng-template" id="editButton.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.editProject(COL_FIELD)" type="button" class="btn btn-link btn-round"
+                data-title="Edit item">
+            <i class="md md-edit"></i>
+        </button>
+    </div>
+</script>
+<script type="text/ng-template" id="viewButton.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.viewProject(COL_FIELD)" type="button" class="btn btn-link btn-round"
+                data-title="View item">
+            <i class="md md-search"></i></button>
+    </div>
+</script>
+<script type="text/ng-template" id="deleteButton.html">
+    <div class="ui-grid-cell-contents">
+        <button ng-click="$root.deleteProject(COL_FIELD)" type="button" class="btn btn-link btn-round"
+                data-title="Delete item">
+            <i class="md md-delete"></i></button>
+    </div>
+</script>
