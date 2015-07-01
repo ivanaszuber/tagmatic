@@ -1,0 +1,32 @@
+<div class="main-container" ng-controller="projectsListController as Projects">
+    <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="">
+        <section>
+            <div class="page-header">
+                <div class="actions">
+                    <button type="button" class="btn btn-link btn-round-sm theme-secondary-text"><span
+                            class="md md-info-outline"></span></button>
+                    <button type="button" class="btn btn-link btn-round-sm theme-secondary-text"><span
+                            class="md md-search"></span></button>
+                </div>
+                <h1><i class="md md-camera"></i> Projects </h1>
+
+                <p class="lead"> Add your projects. </p>
+            </div>
+        </section>
+        <div>
+            <div class="table-responsive well no-padding white no-margin">
+                <div class="gridStyle" ui-grid="gridContacts" ui-grid-selection ui-grid-auto-resize
+                     external-scopes="clickHandler">
+                </div>
+            </div>
+            <div class="footer-buttons">
+                <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)"
+                     data-toggle="tooltip"><i class="md md-delete"></i></div>
+                <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top"
+                     data-title="Scroll to top" data-toggle="tooltip"><i class="md md-arrow-drop-up"></i></div>
+                <div class="btn btn-primary btn-round btn-lg" data-title="New Item" data-toggle="tooltip"><i
+                        class="md md-add"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
