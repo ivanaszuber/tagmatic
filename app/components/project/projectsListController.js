@@ -5,7 +5,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('projectsListController', function ($scope, $state, contactService, $modal, $rootScope) {
+    module.registerController('projectsListController', function ($scope, $state, projectsService, $modal, $rootScope) {
 
         $scope.projects = [];
 
@@ -49,6 +49,12 @@ define(['appModule'], function (module) {
             enableVerticalScrollbar: false
         };
 
+        $rootScope.getProjects = function () {
+            projectsService.getProjectList()
+                .then(function (projects) {
+                    $scope.projects = projects;
+                });
+        };
 
     })
 });
