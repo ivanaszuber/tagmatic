@@ -14,6 +14,8 @@ define([
     '../components/todo/todoItemController',
     '../components/contact/contactsModule',
     '../components/contact/contactsController',
+    '../components/project/projectModule',
+    '../components/project/projectsListController',
     '../api/authService',
     '../api/contactService',
 
