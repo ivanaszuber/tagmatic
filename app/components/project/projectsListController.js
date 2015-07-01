@@ -56,5 +56,33 @@ define(['appModule'], function (module) {
                 });
         };
 
+        $scope.createProject = function () {
+            $modal.open({
+                templateUrl: 'components/project/projectCreateView.html',
+                controller: function ($scope, $modalInstance) {
+                    $scope.project = {};
+                    $scope.submitted = false;
+
+                    $scope.createProject = function (isValid) {
+
+                        $scope.submitted = true;
+
+                        if (isValid) {
+                            projectsService.createProject($scope.project).then(function () {
+                                $modalInstance.close();
+                                $rootScope.getProjects();
+                            });
+                        }
+                        ;
+
+                    };
+
+                    $scope.closeModal = function () {
+                        $modalInstance.close();
+                    }
+                }
+            });
+        };
+
     })
 });
