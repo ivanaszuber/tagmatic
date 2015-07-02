@@ -146,6 +146,16 @@ define(['appModule'], function (module) {
                 });
             };
 
+        $rootScope.deleteIssue = function (id) {
+            issueService.getIssue(id)
+                .then(function (issue) {
+                    $scope.issue = issue;
+                    issueService.deleteIssue(id).then(function (data) {
+                        $scope.issues = data;
+                    })
+                });
+        };
+
         $scope.getIssues();
 
     })
