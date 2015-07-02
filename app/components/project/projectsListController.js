@@ -154,6 +154,16 @@ define(['appModule'], function (module) {
                 });
             };
 
+        $rootScope.deleteProject = function (id) {
+            projectsService.getProject(id)
+                .then(function (project) {
+                    $scope.project = project;
+                    projectsService.deleteProject(id).then(function (data) {
+                        $scope.projects = data;
+                    })
+                });
+        };
+
         $scope.getProjects();
 
     })
