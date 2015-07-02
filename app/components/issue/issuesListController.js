@@ -23,6 +23,14 @@ define(['appModule'], function (module) {
                     width: 40,
                     enableColumnMenu: false,
                     enableSorting: false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'viewButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
                 }
             ],
             data: 'issues',
@@ -109,6 +117,27 @@ define(['appModule'], function (module) {
                                 });
                             }
                         };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            };
+
+        $rootScope.viewIssue =
+            function (id) {
+                $modal.open({
+                    templateUrl: 'components/issue/issueViewView.html',
+                    controller: function ($scope, $modalInstance) {
+                        issueService.getIssue(id)
+                            .then(function (issue) {
+                                $scope.issue = issue;
+                                projectsService.getProject(issue.project_id).then(function (project) {
+                                    $scope.project = {};
+                                    $scope.project.selected = project;
+                                });
+                            });
 
                         $scope.closeModal = function () {
                             $modalInstance.close();
