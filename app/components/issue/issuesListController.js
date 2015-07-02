@@ -15,7 +15,15 @@ define(['appModule'], function (module) {
                 {field: 'id', displayName: 'ID'},
                 {field: 'title', displayName: 'Title'},
                 {field: 'description', displayName: 'Description'},
-                {field: 'getProjectName()', displayName: 'Project'}
+                {field: 'getProjectName()', displayName: 'Project'},
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'editButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
+                }
             ],
             data: 'issues',
             multiSelect: true,
