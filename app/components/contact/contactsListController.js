@@ -83,7 +83,7 @@ define(['appModule'], function (module) {
                     $rootScope.getContacts();
                 })
             })
-        }
+        };
 
 
         $rootScope.editContact =

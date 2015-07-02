@@ -48,6 +48,17 @@ define(['appModule'], function (module) {
             enableVerticalScrollbar: false
         };
 
+        $scope.gridProjects.onRegisterApi = function (gridApi) {
+            $scope.gridApi = gridApi;
+            gridApi.selection.on.rowSelectionChanged($scope, function (row) {
+                projectsService.getProject(row.entity.id)
+                    .then(function (project) {
+                        project.is_selected = true;
+                        $scope.selected.push(project);
+                    });
+            });
+        };
+
         $rootScope.getProjects = function () {
             $scope.projects = [];
             projectsService.getProjectList().then(function (projects) {
@@ -162,6 +173,15 @@ define(['appModule'], function (module) {
                         $scope.projects = data;
                     })
                 });
+        };
+
+
+        $scope.deleteProjects = function () {
+            angular.forEach($scope.selected, function (project) {
+                projectsService.deleteProject(project.id).then(function () {
+                    $rootScope.getProjects();
+                })
+            })
         };
 
         $scope.getProjects();
