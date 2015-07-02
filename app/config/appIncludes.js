@@ -13,7 +13,7 @@ define([
     '../components/todo/todoController',
     '../components/todo/todoItemController',
     '../components/contact/contactsModule',
-    '../components/contact/contactsController',
+    '../components/contact/contactsListController',
     '../components/project/projectModule',
     '../components/project/projectsListController',
     '../api/projectsService',

@@ -133,6 +133,23 @@ define(['appModule'], function (module) {
                 });
             };
 
+        $rootScope.viewProject =
+            function (id) {
+                $modal.open({
+                    templateUrl: 'components/contact/projectViewView.html',
+                    controller: function ($scope, $modalInstance) {
+                        projectsService.getProject(id)
+                            .then(function (project) {
+                                $scope.project = project;
+                            });
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            };
+
         $scope.getProjects();
 
     })
