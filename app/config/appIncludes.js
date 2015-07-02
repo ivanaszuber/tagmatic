@@ -17,7 +17,9 @@ define([
     '../components/project/projectModule',
     '../components/project/projectsListController',
 
+
     '../components/issue/issueModule',
+    '../components/issue/issuesListController',
 
     '../api/projectsService',
     '../api/authService',
