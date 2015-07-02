@@ -110,6 +110,7 @@ define(['appModule'], function (module) {
                                 contactService.getContact(project.user_id).then(function (user) {
                                     $scope.user = {};
                                     $scope.user.selected = user;
+
                                 })
                             });
 
@@ -117,6 +118,7 @@ define(['appModule'], function (module) {
                         $scope.edit = function (isValid) {
                             $scope.submitted = true;
                             if (isValid) {
+                                $scope.project.user_id = $scope.user.selected.id;
                                 projectsService.editProject(id, $scope.project).then(function () {
                                     $modalInstance.close();
                                     $rootScope.getProjects();
