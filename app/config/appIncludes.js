@@ -19,6 +19,7 @@ define([
     '../api/projectsService',
     '../api/authService',
     '../api/contactService',
+    '../api/issueService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',
     '../../lib/vendor/assets/js/directives/autofocus',
