@@ -5,7 +5,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('issuesListController', function ($scope, $state, projectsService, issuesService, $modal, $rootScope) {
+    module.registerController('issuesListController', function ($scope, $state, projectsService, issueService, $modal, $rootScope) {
 
         $scope.issues = [];
         $scope.selected = [];
@@ -27,7 +27,7 @@ define(['appModule'], function (module) {
 
         $rootScope.getIssues = function () {
             $scope.issues = [];
-            issuesService.getIssueList().then(function (issues) {
+            issueService.getIssueList().then(function (issues) {
                 angular.forEach(issues, function (issue) {
                     projectsService.getProject(issue.project_id).then(function (project) {
                         issue.project = project;
@@ -40,7 +40,7 @@ define(['appModule'], function (module) {
             });
         };
 
-        $scope.getProjects();
+        $scope.getIssues();
 
     })
 });
