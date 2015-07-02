@@ -107,6 +107,10 @@ define(['appModule'], function (module) {
                         projectsService.getProject(id)
                             .then(function (project) {
                                 $scope.project = project;
+                                contactService.getContact(project.user_id).then(function (user) {
+                                    $scope.user = {};
+                                    $scope.user.selected = user;
+                                })
                             });
 
                         $scope.submitted = false;

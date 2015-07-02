@@ -9,7 +9,8 @@ define([
     'angular-resource',
     'angular-bootstrap',
     'angular-sanitize',
-    'ui.grid'
+    'ui.grid',
+    'ui.select'
 ], function (ng, couchPotato) {
 
     var appModule = ng.module('appModule', [
@@ -17,6 +18,7 @@ define([
         'ui.router',
         'ui.bootstrap',
         'ui.grid',
+        'ui.select',
         'ngResource',
 
         'loginModule',
