@@ -31,6 +31,14 @@ define(['appModule'], function (module) {
                     width: 40,
                     enableColumnMenu: false,
                     enableSorting: false
+                },
+                {
+                    field: 'id',
+                    displayName: '',
+                    cellTemplate: 'deleteButton.html',
+                    width: 40,
+                    enableColumnMenu: false,
+                    enableSorting: false
                 }
             ],
             data: 'issues',
