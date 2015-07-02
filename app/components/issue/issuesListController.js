@@ -71,6 +71,44 @@ define(['appModule'], function (module) {
             });
         };
 
+        $rootScope.editIssue =
+            function (id) {
+                $modal.open({
+                    templateUrl: 'components/issue/issueEditView.html',
+                    controller: function ($scope, $modalInstance) {
+                        projectsService.getProjectList().then(function (data) {
+                            $scope.projects = data;
+                        });
+
+                        issueService.getIssue(id)
+                            .then(function (issue) {
+                                $scope.issue = issue;
+                                projectsService.getProject(issue.project_id).then(function (project) {
+                                    $scope.project = {};
+                                    $scope.project.selected = project;
+
+                                })
+                            });
+
+                        $scope.submitted = false;
+                        $scope.edit = function (isValid) {
+                            $scope.submitted = true;
+                            if (isValid) {
+                                $scope.issue.projectid = $scope.project.selected.id;
+                                issueService.editIssue(id, $scope.issue).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.getIssues();
+                                });
+                            }
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            };
+
         $scope.getIssues();
 
     })
