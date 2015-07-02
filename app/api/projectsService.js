@@ -38,6 +38,13 @@ define(['appModule'], function (module) {
                     'url': '/projects/' + id,
                     data: project
                 })
+            },
+
+            'deleteProject': function (id) {
+                return apiService.request({
+                    'method': 'DELETE',
+                    'url': '/projects/' + id
+                })
             }
         }
     })
