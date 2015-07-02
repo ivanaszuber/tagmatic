@@ -43,7 +43,8 @@
 
             <div class="col-sm-9">
                 <ui-select ng-model="user.selected" theme="select2" title="Choose a person" search-enabled="false">
-                    <ui-select-match placeholder="Select based on select2">{{$select.selected.first_name}}
+                    <ui-select-match placeholder="Select based on select2">{{$select.selected.first_name + ' ' +
+                        $select.selected.last_name}}
                     </ui-select-match>
                     <ui-select-choices repeat="item in users">
                         <div ng-bind="item.first_name + ' ' + item.last_name"></div>

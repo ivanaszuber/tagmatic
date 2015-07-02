@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+    </button>
+    <h4 class="modal-title">
+        View Contact
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="projectForm">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Name:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="project.name" name="name" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Description:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="project.description" name="description" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Project Lead:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="user.selected" theme="select2" title="Choose a person" search-enabled="false"
+                           disabled>
+                    <ui-select-match placeholder="Select based on select2">{{$select.selected.first_name + ' ' +
+                        $select.selected.last_name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in users">
+                        <div ng-bind="item.first_name + ' ' + item.last_name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="closeModal()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>

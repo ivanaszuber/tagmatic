@@ -136,11 +136,15 @@ define(['appModule'], function (module) {
         $rootScope.viewProject =
             function (id) {
                 $modal.open({
-                    templateUrl: 'components/contact/projectViewView.html',
+                    templateUrl: 'components/project/projectViewView.html',
                     controller: function ($scope, $modalInstance) {
                         projectsService.getProject(id)
                             .then(function (project) {
                                 $scope.project = project;
+                                contactService.getContact(project.user_id).then(function (user) {
+                                    $scope.user = {};
+                                    $scope.user.selected = user;
+                                });
                             });
 
                         $scope.closeModal = function () {
