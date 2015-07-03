@@ -1,0 +1,46 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="tagListController">
+    <section class="todo-app">
+        <div class="page-header">
+            <h1><i class="md md-camera"></i> Tags </h1>
+
+            <p class="lead"> Add your tags here. </p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well white">
+                    <form class="form">
+                        <div class="form-group input-group">
+                            <input id="tag-title" class="form-control" type="text" ng-model="tag.name">
+
+                            <div class="input-group-btn p-l-10">
+                                <button class="btn btn-default" ng-click="createTag()">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="well white">
+                    <ul class="list-unstyled">
+                        <li ng-repeat="tag in tags">
+                            <div class="checkbox" ng-controller="tagItemController">
+                                <span class="pull-right">
+                                <button type="button" class="btn btn-round btn-flat btn-default">
+                                    <i class="md md-edit"></i>
+                                </button>
+                            </span>
+                                <label>
+                                    <input type="checkbox" ng-model="todo.is_selected" ng-change="isSelected()"
+                                           name="tag">{{tag.name}}
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-info" ng-click="delete()">Clear tags</button>
+            </div>
+        </div>
+    </section>
+</div>
