@@ -28,6 +28,7 @@ define([
     '../api/authService',
     '../api/contactService',
     '../api/issueService',
+    '../api/tagService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',
     '../../lib/vendor/assets/js/directives/autofocus',
