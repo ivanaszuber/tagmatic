@@ -10,7 +10,8 @@ define(['appModule'], function (module) {
         $scope.tag = {};
 
         $scope.isSelected = function () {
-            $scope.tag.is_selected = true;
+            $scope.getTag();
+            $scope.tag.is_selected = $scope.tag.is_selected == false;
         };
 
         $scope.getTag = function (id) {
