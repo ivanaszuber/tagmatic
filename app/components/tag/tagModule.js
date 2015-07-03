@@ -23,7 +23,7 @@ define([
                 views: {
                     content: {
                         templateUrl: 'components/tag/tagView.html',
-                        controller: 'tagController',
+                        controller: 'tagListController',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([])
                         }
