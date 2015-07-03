@@ -23,6 +23,7 @@ define([
 
     '../components/tag/tagModule',
     '../components/tag/tagListController',
+    '../components/tag/tagItemController',
 
     '../api/projectsService',
     '../api/authService',
