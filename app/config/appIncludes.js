@@ -21,6 +21,9 @@ define([
     '../components/issue/issueModule',
     '../components/issue/issuesListController',
 
+    '../components/tag/tagModule',
+    '../components/tag/tagListController',
+
     '../api/projectsService',
     '../api/authService',
     '../api/contactService',
