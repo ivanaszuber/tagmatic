@@ -25,6 +25,8 @@ define([
     '../components/tag/tagListController',
     '../components/tag/tagItemController',
 
+    '../components/administration/administrationModule',
+
     '../api/projectsService',
     '../api/authService',
     '../api/contactService',
