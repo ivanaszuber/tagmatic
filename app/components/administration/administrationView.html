@@ -1,34 +1,35 @@
 <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="administrationController">
     <section class="todo-app">
         <div class="row">
-            <div class="col-md-12 filters">
-                <div class="btn-group" role="group" data-toggle="buttons" ng-switch="activeTab">
+            <div class="col-md-12 filters" ng-switch="activeFilter">
+                <div class="btn-group" role="group" data-toggle="buttons">
                     <button class="btn btn-default filter" ng-class="{active : isActive(filter)}"
                             ng-repeat="filter in filters" ng-click="setFilter(filter)" ui-sref-active="active">
                         <input type="radio" name="tab">
                         {{filter}}
                     </button>
+
+                </div>
+                <div class="no-padding white no-margin">
                     <div ng-switch-when="Tasks">
-                        <div class="col-md-12">
-                            <div class="well white">
+                        <div class="col-md-12 well white">
                                 <ul class="list-unstyled">
                                     <li ng-repeat="task in tasks">
                                         <div class="checkbox">
-                                <span class="pull-right">
-                                <button type="button" class="btn btn-round btn-flat btn-default">
-                                    <i class="md md-edit"></i>
-                                </button>
-                            </span>
+                                            <span class="pull-right">
+                                                <button type="button" class="btn btn-round btn-flat btn-default">
+                                                    <i class="md md-edit"></i>
+                                                </button>
+                                            </span>
                                             <label>
                                                 <input type="checkbox" ng-model="task.is_selected"
                                                        ng-change="isSelected()"
-                                                       name="task">{{task.title}}
+                                                       name="task">{{task.title + ' ' + task.description}}
                                             </label>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
                     </div>
                     <div ng-switch-when="Tags">
                         <div class="col-md-12">
@@ -97,17 +98,12 @@
                         </div>
                     </div>
                 </div>
-
         </div>
         </div>
     </section>
     <div>
-        <div class="table-responsive well no-padding white no-margin">
-            <div class="gridStyle" ui-grid="gridIssues" ui-grid-selection ui-grid-auto-resize
-                 external-scopes="clickHandler">
-            </div>
-        </div>
-        <div class="footer-buttons">
+
+    <div class="footer-buttons">
             <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)"
                  data-toggle="tooltip"><i class="md md-delete"></i></div>
             <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top"

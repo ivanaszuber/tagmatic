@@ -6,22 +6,28 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('administrationController', function ($scope, $state, issueService, tagService, milestoneService, effortService) {
+    module.registerController('administrationController', function ($scope,
+                                                                    $state,
+                                                                    issueService,
+                                                                    tagService,
+                                                                    milestoneService,
+                                                                    projectsService,
+                                                                    effortService,
+                                                                    $modal,
+                                                                    $rootScope) {
 
         $scope.tags = [];
         $scope.milestones = [];
         $scope.efforts = [];
         $scope.tasks = [];
-
         $scope.filters = ['Tasks', 'Tags', 'Milestones', 'Efforts'];
-
         $scope.activeFilter = 'Tasks';
 
         $scope.isActive = function (filter) {
             return $scope.activeFilter == filter;
         };
 
-        $scope.setFilter = function (filter) {
+        $rootScope.setFilter = function (filter) {
 
             $scope.activeFilter = filter;
 
@@ -49,6 +55,41 @@ define(['appModule'], function (module) {
                     $scope.efforts = efforts;
                 })
             }
+        };
+
+        $scope.createItem = function () {
+
+            if ($scope.activeFilter == 'Tasks') {
+                $modal.open({
+                    templateUrl: 'components/issue/issueCreateView.html',
+                    controller: function ($scope, $modalInstance) {
+                        $scope.issue = {};
+                        $scope.submitted = false;
+
+                        projectsService.getProjectList().then(function (data) {
+                            $scope.projects = data;
+                        });
+
+                        $scope.newIssue = function (isValid) {
+
+                            $scope.submitted = true;
+
+                            if (isValid) {
+                                issueService.createIssue($scope.issue).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.setFilter('Tasks');
+                                });
+                            }
+
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            }
+
         };
 
 
