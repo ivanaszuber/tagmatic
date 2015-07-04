@@ -64,6 +64,10 @@
     "angular-ui-grid": "~3.0.0-rc.21",
     "vendor":"git@github.com:ivanaszuber/tagmatic-vendor.git#772c1ebf5cfb4ef2c0e068aab0a949fbedcdd374"
   },
+  "devDependencies": {
+    "angular-mocks": "~1.3.0",
+    "angular-scenario": "~1.2.0"
+  },
   "appPath": "appModule",
   "resolutions": {
     "jquery": "~2.0.3",
