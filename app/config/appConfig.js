@@ -19,6 +19,7 @@ var require = {
         'lodash': ['../lib/lodash/dist/lodash.min'],
         'ui.grid': ['../lib/angular-ui-grid/ui-grid'],
         'ui.select': ['../lib/angular-ui-select/dist/select'],
+        'moment': ['../lib/moment/min/moment.min'],
         'modules-includes': 'appIncludes'
     },
     shim: {

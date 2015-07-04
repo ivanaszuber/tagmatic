@@ -2,7 +2,7 @@
  * Created by ivana on 03.07.15..
  */
 
-define(['appModule'], function (module) {
+define(['appModule', 'moment'], function (module, moment) {
 
     "use strict";
 
@@ -124,11 +124,36 @@ define(['appModule'], function (module) {
                         $scope.milestone = {};
                         $scope.submitted = false;
 
+                        $scope.today = function () {
+                            $scope.milestone.due_date = new Date();
+                        };
+                        $scope.today();
+
+                        $scope.clear = function () {
+                            $scope.milestone.due_date = null;
+                        };
+
+                        $scope.open = function ($event) {
+                            $event.preventDefault();
+                            $event.stopPropagation();
+
+                            $scope.opened = true;
+                        };
+
+                        $scope.dateOptions = {
+                            formatYear: 'yy',
+                            startingDay: 1
+                        };
+
+                        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+                        $scope.format = $scope.formats[0];
+
                         $scope.newMilestone = function (isValid) {
 
                             $scope.submitted = true;
 
                             if (isValid) {
+                                $scope.milestone.due_date = moment($scope.milestone.due_date).format("YYYY-MM-DD HH:mm")
                                 milestoneService.createMilestone($scope.milestone).then(function () {
                                     $modalInstance.close();
                                     $rootScope.setFilter('Milestones');
