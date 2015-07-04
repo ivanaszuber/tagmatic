@@ -16,7 +16,7 @@ require.config({
          */
         'jquery': '../lib/jquery/dist/jquery',
         'angular': '../lib/angular/angular',
-        'angular-mocks': '../node_modules/angular-mocks/angular-mocks',
+        'angular-mocks': '../lib/angular-mocks/angular-mocks',
         'angular-couch-potato': '../lib/angular-couch-potato/dist/angular-couch-potato',
         'angular-ui-router': '../lib/angular-ui-router/release/angular-ui-router',
         'jquery-ui': '../lib/jquery-ui/jquery-ui',
@@ -32,7 +32,7 @@ require.config({
         'lodash': '../lib/lodash/dist/lodash.min',
         'ui.grid': '../lib/angular-ui-grid/ui-grid',
         'moment': '../lib/moment/moment',
-
+        'ui.select': ['../lib/angular-ui-select/dist/select'],
 
         /**
          * app files used by the app that have been excluded in karma.conf
@@ -45,6 +45,9 @@ require.config({
         'todoModule': '../app/components/todo/todoModule',
         'contactsModule': '../app/components/contact/contactsModule',
         'projectModule': '../app/components/project/projectModule',
+        'issueModule': '../app/components/issue/issueModule',
+        'tagModule': '../app/components/administration/tag/tagModule',
+        'administrationModule': '../app/components/administration/administrationModule',
 
         //CONTROLLERS
         'loginController': '../app/components/login/loginController',
@@ -88,6 +91,7 @@ require.config({
         'bootstrap': {deps: ['jquery']},
         'modules-includes': {deps: ['angular']},
         'ui.grid': {deps: ['angular']},
+        'ui.select': {deps: ['angular']},
         'ngStorage': {deps: ['angular']},
         'checklist-model': {deps: ['angular']},
         'smartNotification': {deps: ['jquery']}
