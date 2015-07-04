@@ -1,7 +1,7 @@
 /**
  * Created by ivana on 03.07.15..
  */
-define(['appModule'], function (module) {
+define(['../../../appModule'], function (module) {
 
     "use strict";
 

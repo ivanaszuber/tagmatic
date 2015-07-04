@@ -21,9 +21,9 @@ define([
     '../components/issue/issueModule',
     '../components/issue/issuesListController',
 
-    '../components/tag/tagModule',
-    '../components/tag/tagListController',
-    '../components/tag/tagItemController',
+    '../components/administration/tag/tagModule',
+    '../components/administration/tag/tagListController',
+    '../components/administration/tag/tagItemController',
 
     '../components/administration/administrationModule',
     '../components/administration/administrationController',

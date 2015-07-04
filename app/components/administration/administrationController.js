@@ -92,7 +92,7 @@ define(['appModule', 'moment'], function (module, moment) {
 
             if ($scope.activeFilter == 'Tags') {
                 $modal.open({
-                    templateUrl: 'components/tag/tagCreateView.html',
+                    templateUrl: 'components/administration/tag/tagCreateView.html',
                     controller: function ($scope, $modalInstance) {
                         $scope.tag = {};
                         $scope.submitted = false;
@@ -119,7 +119,7 @@ define(['appModule', 'moment'], function (module, moment) {
 
             if ($scope.activeFilter == 'Milestones') {
                 $modal.open({
-                    templateUrl: 'components/milestone/milestoneCreateView.html',
+                    templateUrl: 'components/administration/milestone/milestoneCreateView.html',
                     controller: function ($scope, $modalInstance) {
                         $scope.milestone = {};
                         $scope.submitted = false;
@@ -144,6 +144,33 @@ define(['appModule', 'moment'], function (module, moment) {
                                 milestoneService.createMilestone($scope.milestone).then(function () {
                                     $modalInstance.close();
                                     $rootScope.setFilter('Milestones');
+                                });
+                            }
+
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            }
+
+            if ($scope.activeFilter == 'Efforts') {
+                $modal.open({
+                    templateUrl: 'components/administration/effort/effortCreateView.html',
+                    controller: function ($scope, $modalInstance) {
+                        $scope.effort = {};
+                        $scope.submitted = false;
+
+                        $scope.newEffort = function (isValid) {
+
+                            $scope.submitted = true;
+
+                            if (isValid) {
+                                effortService.createEffort($scope.effort).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.setFilter('Efforts');
                                 });
                             }
 
