@@ -1,97 +1,104 @@
 <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="administrationController">
     <section class="todo-app">
-        <div class="col-md-12 filters">
-            <div class="btn-group" role="group" data-toggle="buttons">
-                <button class="btn btn-default filters" ng-class="{active : isActive(filter)}"
-                        ng-repeat="filter in filters" ng-click="setFilter(filter)" ui-sref-active="active">
-                    <input type="radio" name="tab">
-                    {{filter}}
-                </button>
-            </div>
-        </div>
-        <div ng-switch-when="Tasks">
-            <div class="col-md-12">
-                <div class="well white">
-                    <ul class="list-unstyled">
-                        <li ng-repeat="task in tasks">
-                            <div class="checkbox">
+        <div class="row">
+            <div class="col-md-12 filters">
+                <div class="btn-group" role="group" data-toggle="buttons" ng-switch="activeTab">
+                    <button class="btn btn-default filter" ng-class="{active : isActive(filter)}"
+                            ng-repeat="filter in filters" ng-click="setFilter(filter)" ui-sref-active="active">
+                        <input type="radio" name="tab">
+                        {{filter}}
+                    </button>
+                    <div ng-switch-when="Tasks">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="task in tasks">
+                                        <div class="checkbox">
                                 <span class="pull-right">
                                 <button type="button" class="btn btn-round btn-flat btn-default">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label>
-                                    <input type="checkbox" ng-model="task.is_selected" ng-change="isSelected()"
-                                           name="task">{{task.title}}
-                                </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="task.is_selected"
+                                                       ng-change="isSelected()"
+                                                       name="task">{{task.title}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="Tags">
-            <div class="col-md-12">
-                <div class="well white">
-                    <ul class="list-unstyled">
-                        <li ng-repeat="tag in tags">
-                            <div class="checkbox">
+                        </div>
+                    </div>
+                    <div ng-switch-when="Tags">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="tag in tags">
+                                        <div class="checkbox">
                                 <span class="pull-right">
                                 <button type="button" class="btn btn-round btn-flat btn-default">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label>
-                                    <input type="checkbox" ng-model="tag.is_selected" ng-change="isSelected()"
-                                           name="tag">{{tag.name}}
-                                </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="tag.is_selected"
+                                                       ng-change="isSelected()"
+                                                       name="tag">{{tag.name}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="Milestones">
-            <div class="col-md-12">
-                <div class="well white">
-                    <ul class="list-unstyled">
-                        <li ng-repeat="milestone in milestones">
-                            <div class="checkbox">
+                        </div>
+                    </div>
+                    <div ng-switch-when="Milestones">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="milestone in milestones">
+                                        <div class="checkbox">
                                 <span class="pull-right">
                                 <button type="button" class="btn btn-round btn-flat btn-default">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label>
-                                    <input type="checkbox" ng-model="milestone.is_selected" ng-change="isSelected()"
-                                           name="milestone">{{milestone.name}}
-                                </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="milestone.is_selected"
+                                                       ng-change="isSelected()"
+                                                       name="milestone">{{milestone.name}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="Efforts">
-            <div class="col-md-12">
-                <div class="well white">
-                    <ul class="list-unstyled">
-                        <li ng-repeat="effort in efforts">
-                            <div class="checkbox">
+                        </div>
+                    </div>
+                    <div ng-switch-when="Efforts">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="effort in efforts">
+                                        <div class="checkbox">
                                 <span class="pull-right">
                                 <button type="button" class="btn btn-round btn-flat btn-default">
                                     <i class="md md-edit"></i>
                                 </button>
                             </span>
-                                <label>
-                                    <input type="checkbox" ng-model="effort.is_selected" ng-change="isSelected()"
-                                           name="effort">{{effort.name}}
-                                </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="effort.is_selected"
+                                                       ng-change="isSelected()"
+                                                       name="effort">{{effort.name}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+        </div>
         </div>
     </section>
 </div>
