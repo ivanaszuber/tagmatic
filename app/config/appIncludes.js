@@ -32,6 +32,8 @@ define([
     '../api/contactService',
     '../api/issueService',
     '../api/tagService',
+    '../api/milestoneService',
+    '../api/effortService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',
     '../../lib/vendor/assets/js/directives/autofocus',
