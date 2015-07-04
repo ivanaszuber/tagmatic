@@ -30,7 +30,6 @@ define(['appModule'], function (module) {
                     .then(function (tasks) {
                         $scope.tasks = tasks;
                     });
-
             }
 
             if (filter == 'Tags') {
@@ -53,6 +52,6 @@ define(['appModule'], function (module) {
         };
 
 
-        $scope.setFilter('All');
+        $scope.setFilter('Tasks');
     })
 });
