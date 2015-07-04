@@ -90,6 +90,37 @@ define(['appModule'], function (module) {
                 });
             }
 
+            if ($scope.activeFilter == 'Tags') {
+                $modal.open({
+                    templateUrl: 'components/issue/issueCreateView.html',
+                    controller: function ($scope, $modalInstance) {
+                        $scope.issue = {};
+                        $scope.submitted = false;
+
+                        projectsService.getProjectList().then(function (data) {
+                            $scope.projects = data;
+                        });
+
+                        $scope.newIssue = function (isValid) {
+
+                            $scope.submitted = true;
+
+                            if (isValid) {
+                                issueService.createIssue($scope.issue).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.setFilter('Tasks');
+                                });
+                            }
+
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            }
+
         };
 
 

@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+    </button>
+    <h4 class="modal-title">
+        Create New Tag
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" ng-submit="newTag(tagForm.$valid)" novalidate
+          name="tagForm">
+        <div class="form-group"
+             ng-class="{ 'has-error' : tagForm.name.$invalid && !tagForm.name.$pristine && submitted || tagForm.name.$error.required && submitted}">
+            <label class="col-sm-3 control-label">Title:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="tag.name" name="name" required>
+
+                <p ng-show="tagForm.name.$error.required && submitted" class="help-block">Name is required.</p>
+
+                <p ng-show="tagForm.name.$invalid && !tagForm.name.$pristine" class="help-block">Name is
+                    required.</p>
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : tagForm.description.$invalid && !tagForm.description.$pristine && submitted || tagForm.description.$error.required && submitted}">
+            <label class="col-sm-3 control-label">Description:</label>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="tag.description" name="description" required>
+
+                <p ng-show="tagForm.description.$error.required && submitted" class="help-block">Description is
+                    required.</p>
+
+                <p ng-show="tagForm.description.$invalid && !tagForm.description.$pristine" class="help-block">
+                    Description is
+                    required.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+
+            <button type="submit" class="btn btn-primary">
+                Confirm
+            </button>
+            <button type="button" class="btn btn-default" ng-click="closeModal()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
