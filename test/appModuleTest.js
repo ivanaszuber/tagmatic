@@ -5,7 +5,6 @@ define([
     'angular',
     'angular-mocks',
     'loginController',
-    'loginModule',
     'layoutModule',
     'todoModule',
     'contactsModule',
