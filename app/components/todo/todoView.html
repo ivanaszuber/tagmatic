@@ -21,11 +21,11 @@
             </div>
             <div class="col-md-12 filters">
                 <div class="btn-group" role="group" data-toggle="buttons" aria-label="Filter todo's">
-                    <label class="btn btn-default" ng-class="{active : isActive(filter)}"
+                    <button class="btn btn-default filter" ng-class="{active : isActive(filter)}"
                            ng-repeat="filter in filters" ng-click="setFilter(filter)" ui-sref-active="active">
                         <input type="radio" name="tab">
                         {{filter}}
-                    </label>
+                    </button>
                 </div>
             </div>
             <div class="col-md-12">
