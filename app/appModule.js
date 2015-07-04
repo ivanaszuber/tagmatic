@@ -28,7 +28,8 @@ define([
         'homeModule',
         'projectModule',
         'issueModule',
-        'tagModule'
+        'tagModule',
+        'administrationModule'
     ]);
 
     couchPotato.configureApp(appModule);
