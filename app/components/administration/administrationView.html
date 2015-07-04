@@ -101,4 +101,20 @@
         </div>
         </div>
     </section>
+    <div>
+        <div class="table-responsive well no-padding white no-margin">
+            <div class="gridStyle" ui-grid="gridIssues" ui-grid-selection ui-grid-auto-resize
+                 external-scopes="clickHandler">
+            </div>
+        </div>
+        <div class="footer-buttons">
+            <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)"
+                 data-toggle="tooltip"><i class="md md-delete"></i></div>
+            <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top"
+                 data-title="Scroll to top" data-toggle="tooltip"><i class="md md-arrow-drop-up"></i></div>
+            <div class="btn btn-primary btn-round btn-lg" data-title="New Item" ng-click="createItem()"
+                 data-toggle="tooltip"><i
+                    class="md md-add"></i></div>
+        </div>
+    </div>
 </div>

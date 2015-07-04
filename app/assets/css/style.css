@@ -96,3 +96,7 @@ button.btn.btn-link.btn-round {
 .ui-grid-row {
     margin-top: 10px;
 }
+
+.filter {
+    min-width: 200px;
+}
