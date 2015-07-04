@@ -42,14 +42,16 @@
              ng-class="{ 'has-error' : milestoneForm.due_date.$invalid && !milestoneForm.due_date.$pristine && submitted || milestoneForm.due_date.$error.required && submitted}">
             <label class="col-sm-3 control-label">Due Date:</label>
 
-            <div class="col-sm-9" id="datepickers">
-                <input type="date" class="form-control" datepicker-options="dateOptions" is-open="opened"
-                       datepicker-popup ng-model="milestone.due_date" name="due_date" required>
-                <span class="input-group-btn">
+            <div class="col-sm-9">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="milestone.due_date"
+                           name="due_date"
+                           is-open="opened" datepicker-options="dateOptions" close-text="Close"/>
+              <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open($event)"><i
                         class="glyphicon glyphicon-calendar"></i></button>
               </span>
-
+                </p>
                 <p ng-show="milestoneForm.due_date.$error.required && submitted" class="help-block">Due date is
                     required.</p>
 
@@ -58,7 +60,9 @@
                     Due date is
                     required.</p>
             </div>
+
         </div>
+
         <div class="modal-footer">
 
             <button type="submit" class="btn btn-primary">

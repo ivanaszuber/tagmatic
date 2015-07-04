@@ -124,14 +124,8 @@ define(['appModule', 'moment'], function (module, moment) {
                         $scope.milestone = {};
                         $scope.submitted = false;
 
-                        $scope.today = function () {
-                            $scope.milestone.due_date = new Date();
-                        };
-                        $scope.today();
-
-                        $scope.clear = function () {
-                            $scope.milestone.due_date = null;
-                        };
+                        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+                        $scope.format = $scope.formats[0];
 
                         $scope.open = function ($event) {
                             $event.preventDefault();
@@ -140,13 +134,6 @@ define(['appModule', 'moment'], function (module, moment) {
                             $scope.opened = true;
                         };
 
-                        $scope.dateOptions = {
-                            formatYear: 'yy',
-                            startingDay: 1
-                        };
-
-                        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-                        $scope.format = $scope.formats[0];
 
                         $scope.newMilestone = function (isValid) {
 
