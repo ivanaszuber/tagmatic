@@ -92,23 +92,46 @@ define(['appModule'], function (module) {
 
             if ($scope.activeFilter == 'Tags') {
                 $modal.open({
-                    templateUrl: 'components/issue/issueCreateView.html',
+                    templateUrl: 'components/tag/tagCreateView.html',
                     controller: function ($scope, $modalInstance) {
-                        $scope.issue = {};
+                        $scope.tag = {};
                         $scope.submitted = false;
 
-                        projectsService.getProjectList().then(function (data) {
-                            $scope.projects = data;
-                        });
-
-                        $scope.newIssue = function (isValid) {
+                        $scope.newTag = function (isValid) {
 
                             $scope.submitted = true;
 
                             if (isValid) {
-                                issueService.createIssue($scope.issue).then(function () {
+                                tagService.createTag($scope.tag).then(function () {
                                     $modalInstance.close();
-                                    $rootScope.setFilter('Tasks');
+                                    $rootScope.setFilter('Tags');
+                                });
+                            }
+
+                        };
+
+                        $scope.closeModal = function () {
+                            $modalInstance.close();
+                        }
+                    }
+                });
+            }
+
+            if ($scope.activeFilter == 'Milestones') {
+                $modal.open({
+                    templateUrl: 'components/milestone/milestoneCreateView.html',
+                    controller: function ($scope, $modalInstance) {
+                        $scope.milestone = {};
+                        $scope.submitted = false;
+
+                        $scope.newMilestone = function (isValid) {
+
+                            $scope.submitted = true;
+
+                            if (isValid) {
+                                milestoneService.createMilestone($scope.milestone).then(function () {
+                                    $modalInstance.close();
+                                    $rootScope.setFilter('Milestones');
                                 });
                             }
 
