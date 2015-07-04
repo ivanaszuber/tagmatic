@@ -6,7 +6,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('administrationController', function ($scope, $state, issueService, tagService) {
+    module.registerController('administrationController', function ($scope, $state, issueService, tagService, milestoneService, effortService) {
 
         $scope.tags = [];
         $scope.milestones = [];
@@ -36,6 +36,18 @@ define(['appModule'], function (module) {
             if (filter == 'Tags') {
                 tagService.getTagList().then(function (tags) {
                     $scope.tags = tags;
+                })
+            }
+
+            if (filter == 'Milestones') {
+                milestoneService.getMilestoneList().then(function (milestones) {
+                    $scope.milestones = milestones;
+                })
+            }
+
+            if (filter == 'Efforts') {
+                effortService.getEffortList().then(function (efforts) {
+                    $scope.efforts = efforts;
                 })
             }
         };
