@@ -206,6 +206,56 @@ define([
 
             })
 
+            describe('deleteProject', function () {
+                var project = {
+                    "name": "test",
+                    "description": "test"
+                };
+
+                beforeEach(inject(function ($injector) {
+                    $httpBackend = $injector.get('$httpBackend');
+                    $httpBackend.when('DELETE', 'http://localhost:5005/api/v1/projects/1')
+                        .respond(200, {
+                            "name": "test",
+                            "description": "test"
+                        });
+                    $httpBackend.when('GET', 'components/layout/layoutView.html')
+                        .respond(200);
+                    $httpBackend.when('GET', 'components/todo/todoView.html')
+                        .respond(200);
+                }));
+
+                it('should send a DELETE request to api/v1/projects', function () {
+                    ProjectService.deleteProject(id);
+                    $httpBackend.expectDELETE('http://localhost:5005/api/v1/projects/1');
+                    $httpBackend.flush();
+                });
+
+
+                describe('deleteProject request chain', function () {
+                    beforeEach(function () {
+                        deferred = q.defer();
+
+                        spyOn(ProjectService, 'deleteProject').and.callThrough();
+                        spyOn(ApiService, 'request').and.returnValue(deferred.promise);
+                    });
+
+
+                    beforeEach(function () {
+                        ProjectService.deleteProject(id);
+                    });
+
+
+                    it('should call apiService.request', function () {
+                        expect(ApiService.request).toHaveBeenCalled();
+                        deferred.resolve(project);
+                        $scope.$apply();
+                    });
+
+                })
+
+
+            });
 
         });
     });
