@@ -28,6 +28,9 @@ define([
     '../components/administration/administrationModule',
     '../components/administration/administrationController',
 
+    '../components/board/boardModule',
+    '../components/board/boardController',
+
     '../api/projectsService',
     '../api/authService',
     '../api/contactService',
