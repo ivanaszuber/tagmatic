@@ -6,7 +6,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('administrationController', function ($scope, columnService) {
+    module.registerController('boardController', function ($scope, columnService) {
 
         $scope.columns = [];
         $scope.isLoading = false;
