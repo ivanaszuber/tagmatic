@@ -13,7 +13,7 @@ define(['appModule'], function (module) {
                 var dragOverClass = attrs.boardDrop;
 
                 //  Prevent the default behavior. This has to be called in order for drob to work
-                cancel = function (event) {
+                var cancel = function (event) {
                     if (event.preventDefault) {
                         event.preventDefault();
                     }
