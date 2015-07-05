@@ -45,6 +45,8 @@ define([
                 .respond(200, {success: true});
             $httpBackend.when('GET', 'components/layout/layoutView.html')
                 .respond(200, {success: true});
+            $httpBackend.when('GET', 'components/todo/todoView.html')
+                .respond(200);
         }));
 
         beforeEach(function () {

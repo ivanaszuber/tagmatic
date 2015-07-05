@@ -27,6 +27,8 @@ define([
                     .respond(200);
                 $httpBackend.when('GET', 'components/layout/layoutView.html')
                     .respond(200);
+                $httpBackend.when('GET', 'components/todo/todoView.html')
+                    .respond(200);
             }));
 
             beforeEach(function () {
@@ -75,6 +77,8 @@ define([
                 $httpBackend.when('GET', 'components/login/loginView.html')
                     .respond(200);
                 $httpBackend.when('GET', 'components/layout/layoutView.html')
+                    .respond(200);
+                $httpBackend.when('GET', 'components/todo/todoView.html')
                     .respond(200);
             }));
 
