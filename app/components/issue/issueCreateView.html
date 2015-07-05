@@ -52,6 +52,22 @@
                     required.</p>
             </div>
         </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : issueForm.select.$invalid && !issueForm.select.$pristine }" ng-show="showColumn">
+            <label class="col-sm-3 control-label">Column:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="column.selected" theme="select2" title="Choose a column" search-enabled="false">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in columns">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <p ng-show="issueForm.select.$invalid && !issueForm.select.$pristine" class="help-block">Column is
+                    required.</p>
+            </div>
+        </div>
         <div class="modal-footer">
 
             <button type="submit" class="btn btn-primary">

@@ -5,10 +5,11 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('issuesListController', function ($scope, $state, projectsService, issueService, $modal, $rootScope) {
+    module.registerController('issuesListController', function ($scope, $state, projectsService, issueService, $modal, $rootScope, columnService) {
 
         $scope.issues = [];
         $scope.selected = [];
+        $scope.showColumn = true;
 
         $scope.gridIssues = {
             columnDefs: [
@@ -73,6 +74,10 @@ define(['appModule'], function (module) {
 
                     projectsService.getProjectList().then(function (data) {
                         $scope.projects = data;
+                    });
+
+                    columnService.getColumnList().then(function (data) {
+                        $scope.columns = data;
                     });
 
                     $scope.newIssue = function (isValid) {

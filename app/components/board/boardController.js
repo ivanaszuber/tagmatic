@@ -6,7 +6,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('boardController', function ($scope, columnService, $modal, $rootScope) {
+    module.registerController('boardController', function ($scope, columnService, $modal, $rootScope, issueService, projectsService) {
 
         $scope.columns = [];
         $scope.isLoading = false;
@@ -15,8 +15,9 @@ define(['appModule'], function (module) {
             $scope.isLoading = true;
             columnService.getColumnList()
                 .then(function (data) {
-                    $scope.isLoading = false;
                     $scope.columns = data;
+                    $scope.isLoading = false;
+
                 });
         };
 
@@ -33,6 +34,40 @@ define(['appModule'], function (module) {
 
                         if (isValid) {
                             columnService.createColumn($scope.column).then(function () {
+                                $modalInstance.close();
+                                $rootScope.refreshBoard();
+                            });
+                        }
+
+                    };
+
+                    $scope.closeModal = function () {
+                        $modalInstance.close();
+                    }
+                }
+            });
+        };
+
+        $scope.createIssue = function (column) {
+            $modal.open({
+                templateUrl: 'components/issue/issueCreateView.html',
+                controller: function ($scope, $modalInstance) {
+                    $scope.issue = {};
+                    $scope.submitted = false;
+
+                    projectsService.getProjectList().then(function (data) {
+                        $scope.projects = data;
+                    });
+
+                    $scope.showColumn = false;
+
+                    $scope.newIssue = function (isValid) {
+
+                        $scope.submitted = true;
+
+                        if (isValid) {
+                            $scope.issue.column_id = column;
+                            issueService.createIssue($scope.issue).then(function () {
                                 $modalInstance.close();
                                 $rootScope.refreshBoard();
                             });
