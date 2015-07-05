@@ -13,7 +13,8 @@ define([
     'issueModule',
     'tagModule',
     'administrationModule',
-    'authService'
+    'authService',
+    'apiService'
 ], function (appModule) {
 
     describe('appModule', function () {
