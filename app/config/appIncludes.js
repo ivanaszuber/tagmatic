@@ -38,6 +38,7 @@ define([
     '../api/tagService',
     '../api/milestoneService',
     '../api/effortService',
+    '../api/columnService',
 
     '../../lib/vendor/assets/js/directives/menu-toggle',
     '../../lib/vendor/assets/js/directives/autofocus',
