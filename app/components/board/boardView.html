@@ -1,19 +1,28 @@
 <div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="boardController">
 
-    <div class="col-lg-3 panel panel-primary colStyle" id="{{col.Id}}" board-drop="over"
-         ng-repeat="col in columns">
+    <div class="col-lg-3 panel panel-primary colStyle" id="{{column.id}}" board-drop="over"
+         ng-repeat="column in columns">
         <div class="panel-heading" style="margin-bottom: 10px;">
-            <h3 class="panel-title">{{col.Name}}</h3>
+            <h3 class="panel-title">{{column.name}}</h3>
         </div>
         <div class="thumbnail" draggable="true" board-drag="task"
-             ng-repeat="task in col.Tasks" style="margin-bottom: 10px;">
+             ng-repeat="task in column.tasks" style="margin-bottom: 10px;">
             <div class="caption">
-                <h5><strong>{{task.Name}}</strong></h5>
+                <h5><strong>{{task.name}}</strong></h5>
 
-                <p>{{task.Description}}</p>
+                <p>{{task.description}}</p>
 
                 <p><a href="#" class="btn btn-primary btn-sm" role="button">Edit</a></p>
             </div>
         </div>
+    </div>
+    <div class="footer-buttons">
+        <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)"
+             data-toggle="tooltip"><i class="md md-delete"></i></div>
+        <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top"
+             data-title="Scroll to top" data-toggle="tooltip"><i class="md md-arrow-drop-up"></i></div>
+        <div class="btn btn-primary btn-round btn-lg" data-title="New Item" ng-click="createColumn()"
+             data-toggle="tooltip"><i
+                class="md md-add"></i></div>
     </div>
 </div>
