@@ -93,6 +93,15 @@ define(['appModule'], function (module) {
             });
         };
 
+        $scope.onDrop = function (data, column_id) {
+            issueService.getIssue(data.issue_id).then(function (issue) {
+                issue.column_id = column_id;
+                issueService.editIssue(issue_id, issue).then(function () {
+                    $scope.refreshBoard();
+                })
+            })
+        };
+
         $scope.refreshBoard();
     })
 });

@@ -30,6 +30,8 @@ define([
 
     '../components/board/boardModule',
     '../components/board/boardController',
+    '../components/board/boardDragDirective',
+    '../components/board/boardDropDirective',
 
     '../api/projectsService',
     '../api/authService',
