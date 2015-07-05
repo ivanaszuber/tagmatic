@@ -154,6 +154,59 @@ define([
                 });
 
             })
+
+
+        });
+
+        describe('editProject', function () {
+            var project = {
+                "name": "test",
+                "description": "test"
+            };
+
+            beforeEach(inject(function ($injector) {
+                $httpBackend = $injector.get('$httpBackend');
+                $httpBackend.when('PUT', 'http://localhost:5005/api/v1/projects/1')
+                    .respond(200, {
+                        "name": "test",
+                        "description": "test"
+                    });
+                $httpBackend.when('GET', 'components/layout/layoutView.html')
+                    .respond(200);
+                $httpBackend.when('GET', 'components/todo/todoView.html')
+                    .respond(200);
+            }));
+
+            it('should send a PUT request to api/v1/projects', function () {
+                ProjectService.editProject(id, project);
+                $httpBackend.expectPUT('http://localhost:5005/api/v1/projects/1');
+                $httpBackend.flush();
+            });
+
+
+            describe('editProject request chain', function () {
+                beforeEach(function () {
+                    deferred = q.defer();
+
+                    spyOn(ProjectService, 'editProject').and.callThrough();
+                    spyOn(ApiService, 'request').and.returnValue(deferred.promise);
+                });
+
+
+                beforeEach(function () {
+                    ProjectService.editProject(id, project);
+                });
+
+
+                it('should call apiService.request', function () {
+                    expect(ApiService.request).toHaveBeenCalled();
+                    deferred.resolve(project);
+                    $scope.$apply();
+                });
+
+            })
+
+
         });
     });
 
