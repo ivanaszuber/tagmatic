@@ -8,6 +8,11 @@
                      data-toggle="tooltip"><i
                         class="md md-add"></i>
                 </div>
+                <div class="pull-right btn btn-primary btn-sm" data-title="Delete Item"
+                     ng-click="deleteColumn(column.id)"
+                     data-toggle="tooltip"><i
+                        class="md md-remove"></i>
+                </div>
             </h3>
         </div>
         <div class="thumbnail" draggable="true" board-drag="task"
@@ -20,10 +25,11 @@
             <div ng-controller="issuesListController">
 
                 <div class="btn btn-default  btn-sm" scroll-to="top"
-                     data-title="Scroll to top" data-toggle="tooltip" ng-click="editIssue()"><i class="md md-edit"></i>
+                     data-title="Scroll to top" data-toggle="tooltip" ng-click="editIssue(task.id)"><i
+                        class="md md-edit"></i>
                 </div>
                 <div class="btn btn-default btn-sm" data-title="Remove 0 item(s)"
-                     data-toggle="tooltip"><i class="md md-delete" ng-click="deleteIssue()"></i></div>
+                     data-toggle="tooltip"><i class="md md-delete" ng-click="deleteIssue(task.id)"></i></div>
             </div>
         </div>
     </div>

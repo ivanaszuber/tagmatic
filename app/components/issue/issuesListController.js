@@ -127,6 +127,7 @@ define(['appModule'], function (module) {
                                 issueService.editIssue(id, $scope.issue).then(function () {
                                     $modalInstance.close();
                                     $rootScope.getIssues();
+                                    $rootScope.refreshBoard();
                                 });
                             }
                         };
@@ -165,6 +166,7 @@ define(['appModule'], function (module) {
                     $scope.issue = issue;
                     issueService.deleteIssue(id).then(function (data) {
                         $scope.issues = data;
+                        $rootScope.refreshBoard();
                     })
                 });
         };

@@ -100,3 +100,11 @@ button.btn.btn-link.btn-round {
 .filter {
     min-width: 200px;
 }
+
+.panel-heading {
+    margin-top: 10px;
+}
+
+.pull-right.btn.btn-primary.btn-sm {
+    margin-top: -5px;
+}

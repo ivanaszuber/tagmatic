@@ -48,6 +48,17 @@ define(['appModule'], function (module) {
             });
         };
 
+        $scope.deleteColumn = function (id) {
+            columnService.getColumn(id)
+                .then(function (column) {
+                    $scope.column = column;
+                    columnService.deleteColumn(id).then(function (data) {
+                        $scope.columns = data;
+                        $rootScope.refreshBoard();
+                    })
+                });
+        };
+
         $scope.createIssue = function (column) {
             $modal.open({
                 templateUrl: 'components/issue/issueCreateView.html',
