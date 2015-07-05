@@ -14,7 +14,8 @@ define([
     'tagModule',
     'administrationModule',
     'authService',
-    'apiService'
+    'apiService',
+    'effortService'
 ], function (appModule) {
 
     describe('appModule', function () {
