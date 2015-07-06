@@ -6,7 +6,8 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('boardController', function ($scope, columnService, $modal, $rootScope, issueService, projectsService) {
+    module.registerController('boardController', function ($scope, columnService, $modal, $rootScope, issueService, projectsService,
+                                                           tagService, milestoneService, effortService, contactService) {
 
         $scope.columns = [];
         $scope.isLoading = false;
@@ -68,6 +69,22 @@ define(['appModule'], function (module) {
 
                     projectsService.getProjectList().then(function (data) {
                         $scope.projects = data;
+                    });
+
+                    tagService.getTagList().then(function (data) {
+                        $scope.tags = data;
+                    });
+
+                    milestoneService.getMilestoneList().then(function (data) {
+                        $scope.milestones = data;
+                    });
+
+                    effortService.getEffortList().then(function (data) {
+                        $scope.efforts = data;
+                    });
+
+                    contactService.getContactList().then(function (data) {
+                        $scope.users = data;
                     });
 
                     $scope.showColumn = false;

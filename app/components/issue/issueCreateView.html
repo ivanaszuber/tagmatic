@@ -27,7 +27,8 @@
             <label class="col-sm-3 control-label">Description:</label>
 
             <div class="col-sm-9">
-                <input type="text" class="form-control" ng-model="issue.description" name="description" required>
+                <textarea type="text" class="form-control" ng-model="issue.description" name="description"
+                          required></textarea>
 
                 <p ng-show="issueForm.description.$error.required && submitted" class="help-block">Description is
                     required.</p>
@@ -103,6 +104,19 @@
                     </ui-select-match>
                     <ui-select-choices repeat="item in efforts">
                         <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Assigned to:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="user.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.first_name + ' ' + $select.selected.last_name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in users">
+                        <div ng-bind="item.first_name + ' ' + item.last_name"></div>
                     </ui-select-choices>
                 </ui-select>
             </div>
