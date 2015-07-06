@@ -53,6 +53,74 @@
                     required.</p>
             </div>
         </div>
+        <div class="form-group"
+             ng-class="{ 'has-error' : issueForm.select.$invalid && !issueForm.select.$pristine }" ng-show="showColumn">
+            <label class="col-sm-3 control-label">Column:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="column.selected" theme="select2" title="Choose a column" search-enabled="false">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in columns">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <p ng-show="issueForm.select.$invalid && !issueForm.select.$pristine" class="help-block">Column is
+                    required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Tag:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="tag.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in tags">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Milestone:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="milestone.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in milestones">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Effort:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="effort.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in efforts">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Assigned to:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="user.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.first_name + ' ' + $select.selected.last_name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in users">
+                        <div ng-bind="item.first_name + ' ' + item.last_name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
         <div class="modal-footer">
 
             <button type="submit" class="btn btn-primary">

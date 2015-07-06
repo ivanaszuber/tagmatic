@@ -127,6 +127,22 @@ define(['appModule'], function (module) {
                             $scope.projects = data;
                         });
 
+                        tagService.getTagList().then(function (data) {
+                            $scope.tags = data;
+                        });
+
+                        milestoneService.getMilestoneList().then(function (data) {
+                            $scope.milestones = data;
+                        });
+
+                        effortService.getEffortList().then(function (data) {
+                            $scope.efforts = data;
+                        });
+
+                        contactService.getContactList().then(function (data) {
+                            $scope.users = data;
+                        });
+
                         issueService.getIssue(id)
                             .then(function (issue) {
                                 $scope.issue = issue;
