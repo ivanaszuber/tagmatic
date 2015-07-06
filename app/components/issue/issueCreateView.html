@@ -68,6 +68,19 @@
                     required.</p>
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Tag:</label>
+
+            <div class="col-sm-9">
+                <ui-select ng-model="tag.selected" theme="select2">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in tags">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
         <div class="modal-footer">
 
             <button type="submit" class="btn btn-primary">
