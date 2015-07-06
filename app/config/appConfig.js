@@ -20,6 +20,7 @@ var require = {
         'ui.grid': ['../lib/angular-ui-grid/ui-grid'],
         'ui.select': ['../lib/angular-ui-select/dist/select'],
         'moment': ['../lib/moment/min/moment.min'],
+        'colorpicker': ['../lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module'],
         'modules-includes': 'appIncludes'
     },
     shim: {
@@ -28,6 +29,7 @@ var require = {
         'angular-sanitize': {deps: ['angular']},
         'angular-bootstrap': {deps: ['angular']},
         'angular-ui-router': {deps: ['angular']},
+        'colorpicker': {deps: ['angular']},
         'jquery-ui': { deps: ['jquery']},
         'ui.grid': {deps: ['angular']},
         'ui.select': {deps: ['angular']},

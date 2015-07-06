@@ -10,7 +10,8 @@ define([
     'angular-bootstrap',
     'angular-sanitize',
     'ui.grid',
-    'ui.select'
+    'ui.select',
+    'colorpicker'
 ], function (ng, couchPotato) {
 
     var appModule = ng.module('appModule', [
@@ -20,6 +21,7 @@ define([
         'ui.grid',
         'ui.select',
         'ngResource',
+        'colorpicker.module',
 
         'loginModule',
         'layoutModule',
