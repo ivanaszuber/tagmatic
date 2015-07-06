@@ -5,7 +5,7 @@ define(['appModule'], function (module) {
 
     "use strict";
 
-    module.registerController('issuesListController', function ($scope, $state, projectsService, issueService, $modal, $rootScope, columnService, tagService) {
+    module.registerController('issuesListController', function ($scope, $state, projectsService, issueService, $modal, $rootScope, columnService, tagService, milestoneService) {
 
         $scope.issues = [];
         $scope.selected = [];
@@ -83,6 +83,10 @@ define(['appModule'], function (module) {
 
                     tagService.getTagList().then(function (data) {
                         $scope.tags = data;
+                    });
+
+                    milestoneService.getMilestoneList().then(function (data) {
+                        $scope.milestones = data;
                     });
 
                     $scope.newIssue = function (isValid) {
