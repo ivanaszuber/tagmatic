@@ -43,12 +43,13 @@
             <label class="col-sm-3 control-label">Project:</label>
 
             <div class="col-sm-9">
-                <select data-smart-select2 style="width:100%;" class="select2" ng-model="issue.project_id" name="select"
-                        ng-required="true">
-                    <option ng-repeat="project in projects" value="{{project.id}}">{{project.name}}
-                    </option>
-                </select>
-
+                <ui-select ng-model="project.selected" theme="select2" search-enabled="false">
+                    <ui-select-match>{{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in projects">
+                        <div ng-bind="item.name"></div>
+                    </ui-select-choices>
+                </ui-select>
                 <p ng-show="issueForm.select.$invalid && !issueForm.select.$pristine" class="help-block">Project is
                     required.</p>
             </div>

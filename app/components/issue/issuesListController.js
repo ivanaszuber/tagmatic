@@ -71,6 +71,7 @@ define(['appModule'], function (module) {
                 templateUrl: 'components/issue/issueCreateView.html',
                 controller: function ($scope, $modalInstance) {
                     $scope.issue = {};
+                    $scope.project = {};
                     $scope.submitted = false;
                     $scope.showColumn = true;
 
@@ -103,6 +104,7 @@ define(['appModule'], function (module) {
                         $scope.submitted = true;
 
                         if (isValid) {
+                            $scope.issue.project_id = $scope.project.selected.id;
                             issueService.createIssue($scope.issue).then(function () {
                                 $modalInstance.close();
                                 $rootScope.getIssues();
@@ -157,7 +159,7 @@ define(['appModule'], function (module) {
                         $scope.edit = function (isValid) {
                             $scope.submitted = true;
                             if (isValid) {
-                                $scope.issue.projectid = $scope.project.selected.id;
+                                $scope.issue.project_id = $scope.project.selected.id;
                                 issueService.editIssue(id, $scope.issue).then(function () {
                                     $modalInstance.close();
                                     $rootScope.getIssues();

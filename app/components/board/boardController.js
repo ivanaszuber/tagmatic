@@ -65,6 +65,7 @@ define(['appModule'], function (module) {
                 templateUrl: 'components/issue/issueCreateView.html',
                 controller: function ($scope, $modalInstance) {
                     $scope.issue = {};
+                    $scope.project = {};
                     $scope.submitted = false;
 
                     projectsService.getProjectList().then(function (data) {
@@ -95,6 +96,7 @@ define(['appModule'], function (module) {
 
                         if (isValid) {
                             $scope.issue.column_id = column;
+                            $scope.issue.project_id = $scope.project.selected.id;
                             issueService.createIssue($scope.issue).then(function () {
                                 $modalInstance.close();
                                 $rootScope.refreshBoard();
