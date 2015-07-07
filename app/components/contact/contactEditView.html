@@ -31,15 +31,11 @@
                     required.</p>
             </div>
         </div>
-        <div class="form-group"
-             ng-class="{ 'has-error' : contactForm.text.$invalid && !contactForm.text.$pristine && submitted || contactForm.text.$error.required && submitted}">
+        <div class="form-group">
             <label class="col-sm-3 control-label">Summary:</label>
 
             <div class="col-sm-9">
-                <textarea type="text" class="form-control" ng-model="contact.text" name="text" required></textarea>
-                <p ng-show="contactForm.text.$error.required && submitted" class="help-block">Text is required.</p>
-                <p ng-show="contactForm.text.$invalid && !contactForm.text.$pristine" class="help-block">Text is
-                    required.</p>
+                <textarea type="text" class="form-control" ng-model="contact.text" name="text"></textarea>
             </div>
         </div>
         <div class="modal-footer">
