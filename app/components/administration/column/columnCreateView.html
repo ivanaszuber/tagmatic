@@ -22,20 +22,11 @@
                     required.</p>
             </div>
         </div>
-        <div class="form-group"
-             ng-class="{ 'has-error' : columnForm.description.$invalid && !columnForm.description.$pristine && submitted || columnForm.description.$error.required && submitted}">
+        <div class="form-group">
             <label class="col-sm-3 control-label">Description:</label>
 
             <div class="col-sm-9">
-                <input type="text" class="form-control" ng-model="column.description" name="description" required>
-
-                <p ng-show="columnForm.description.$error.required && submitted" class="help-block">Description is
-                    required.</p>
-
-                <p ng-show="columnForm.description.$invalid && !columnForm.description.$pristine"
-                   class="help-block">
-                    Description is
-                    required.</p>
+                <input type="text" class="form-control" ng-model="column.description" name="description">
             </div>
         </div>
         <div class="modal-footer">
