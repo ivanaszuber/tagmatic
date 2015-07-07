@@ -80,6 +80,7 @@ define(['appModule'], function (module) {
                 templateUrl: 'components/project/projectCreateView.html',
                 controller: function ($scope, $modalInstance) {
                     $scope.project = {};
+                    $scope.user = {};
                     $scope.submitted = false;
 
                     contactService.getContactList().then(function (data) {
@@ -91,6 +92,7 @@ define(['appModule'], function (module) {
                         $scope.submitted = true;
 
                         if (isValid) {
+                            $scope.project.user_id = $scope.user.selected.id;
                             projectsService.createProject($scope.project).then(function () {
                                 $modalInstance.close();
                                 $rootScope.getProjects();
