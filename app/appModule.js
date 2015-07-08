@@ -11,13 +11,17 @@ define([
     'angular-sanitize',
     'ui.grid',
     'ui.select',
-    'colorpicker'
+    'colorpicker',
+    'angular-strap',
+    'angulartics'
 ], function (ng, couchPotato) {
 
     var appModule = ng.module('appModule', [
         'scs.couch-potato',
         'ui.router',
         'ui.bootstrap',
+        'mgcrea.ngStrap',
+        'angulartics',
         'ui.grid',
         'ui.select',
         'ngResource',

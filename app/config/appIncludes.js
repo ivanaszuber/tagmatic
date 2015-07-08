@@ -50,6 +50,8 @@ define([
     '../../lib/vendor/assets/js/directives/navbar-search',
     '../../lib/vendor/assets/js/directives/todo-widget',
     '../../lib/vendor/assets/js/vendors/ripples',
-    '../../lib/vendor/assets/js/app.filters'
+    '../../lib/vendor/assets/js/app.filters',
+    //'../../lib/vendor/vendor/assets/js/vendors.min',
+    '../../lib/vendor/vendor/assets/js/app.min'
 
 ])
