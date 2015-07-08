@@ -52,6 +52,8 @@ define([
     '../../lib/vendor/assets/js/vendors/ripples',
     '../../lib/vendor/assets/js/app.filters',
     //'../../lib/vendor/vendor/assets/js/vendors.min',
-    '../../lib/vendor/vendor/assets/js/app.min'
+    '../../lib/vendor/vendor/assets/js/app.min',
+    '../../lib/vendor/assets/js/colors',
+    '../../lib/vendor/assets/js/app.filters'
 
 ])
