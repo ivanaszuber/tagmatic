@@ -24,6 +24,7 @@ define([
     '../components/administration/tag/tagModule',
     '../components/administration/tag/tagListController',
     '../components/administration/tag/tagItemController',
+    '../components/administration/tag/tagColorDirective',
 
     '../components/administration/administrationModule',
     '../components/administration/administrationController',
@@ -52,7 +53,7 @@ define([
     '../../lib/vendor/assets/js/vendors/ripples',
     '../../lib/vendor/assets/js/app.filters',
     //'../../lib/vendor/vendor/assets/js/vendors.min',
-    '../../lib/vendor/vendor/assets/js/app.min',
+    //'../../lib/vendor/vendor/assets/js/app.min',
     '../../lib/vendor/assets/js/colors',
     '../../lib/vendor/assets/js/app.filters'
 

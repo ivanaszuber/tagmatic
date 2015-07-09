@@ -59,36 +59,6 @@ define(['appModule', 'moment'], function (module, moment) {
 
         $scope.createItem = function () {
 
-            if ($scope.activeFilter == 'Tasks') {
-                $modal.open({
-                    templateUrl: 'components/issue/issueCreateView.html',
-                    controller: function ($scope, $modalInstance) {
-                        $scope.issue = {};
-                        $scope.submitted = false;
-
-                        projectsService.getProjectList().then(function (data) {
-                            $scope.projects = data;
-                        });
-
-                        $scope.newIssue = function (isValid) {
-
-                            $scope.submitted = true;
-
-                            if (isValid) {
-                                issueService.createIssue($scope.issue).then(function () {
-                                    $modalInstance.close();
-                                    $rootScope.setFilter('Tasks');
-                                });
-                            }
-
-                        };
-
-                        $scope.closeModal = function () {
-                            $modalInstance.close();
-                        }
-                    }
-                });
-            }
 
             if ($scope.activeFilter == 'Tags') {
                 $modal.open({
@@ -185,7 +155,29 @@ define(['appModule', 'moment'], function (module, moment) {
 
         };
 
+        $scope.deleteTag = function (id) {
 
+            tagService.deleteTag(id).then(function (data) {
+                $scope.tags = data;
+            })
+
+        };
+
+        $scope.deleteItem = function () {
+
+            if ($scope.activeFilter == 'Tasks') {
+                todoService.deleteCompleted().then(function (data) {
+                    $scope.toDos = data;
+                })
+            }
+
+            if ($scope.activeFilter == 'Tags') {
+                tagService.deleteTag().then(function (data) {
+                    $scope.tags = data;
+                })
+            }
+
+        };
         $scope.setFilter('Tasks');
     })
 });

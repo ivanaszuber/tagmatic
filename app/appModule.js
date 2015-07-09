@@ -7,20 +7,20 @@ define([
     'angular-couch-potato',
     'angular-ui-router',
     'angular-resource',
+    'angular-strap',
     'angular-bootstrap',
     'angular-sanitize',
     'ui.grid',
     'ui.select',
     'colorpicker',
-    'angular-strap',
     'angulartics'
 ], function (ng, couchPotato) {
 
     var appModule = ng.module('appModule', [
         'scs.couch-potato',
         'ui.router',
-        'ui.bootstrap',
         'mgcrea.ngStrap',
+        'ui.bootstrap',
         'angulartics',
         'ui.grid',
         'ui.select',

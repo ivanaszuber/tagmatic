@@ -13,23 +13,24 @@
                 <div class="no-padding white no-margin">
                     <div ng-switch-when="Tasks">
                         <div class="col-md-12 well white">
-                                <ul class="list-unstyled">
-                                    <li ng-repeat="task in tasks">
-                                        <div class="checkbox">
+                            <ul class="list-unstyled">
+                                <li ng-repeat="task in tasks">
+                                    <div class="checkbox">
                                             <span class="pull-right">
                                                 <button type="button" class="btn btn-round btn-flat btn-default">
                                                     <i class="md md-edit"></i>
                                                 </button>
                                             </span>
-                                            <label>
-                                                <input type="checkbox" ng-model="task.is_selected"
-                                                       ng-change="isSelected()"
-                                                       name="task">{{task.title + ' ' + task.description}}
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <label>
+                                            <input type="checkbox" ng-model="task.is_selected"
+                                                   ng-change="isSelected()"
+                                                   name="task">{{task.title + ' ' + task.description}}
+                                        </label>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div ng-switch-when="Tags">
                         <div class="col-md-12">
@@ -37,15 +38,15 @@
                                 <ul class="list-unstyled">
                                     <li ng-repeat="tag in tags">
                                         <div class="checkbox">
-                                <span class="pull-right">
-                                <button type="button" class="btn btn-round btn-flat btn-default">
-                                    <i class="md md-edit"></i>
-                                </button>
-                            </span>
-                                            <label>
-                                                <input type="checkbox" ng-model="tag.is_selected"
-                                                       ng-change="isSelected()"
-                                                       name="tag">{{tag.name}}
+                                            <span class="pull-right">
+                                            <button type="button" class="btn btn-round btn-flat btn-default">
+                                                <i class="md md-edit"></i>
+                                            </button>
+                                                <button type="button" class="btn btn-round btn-flat btn-default" ng-click="deleteTag(tag.id)">
+                                                    <i class="md md-delete"></i>
+                                                </button>
+                                            </span>
+                                            <label ng-style="{'background-color':tag.color, 'color':'#fff', 'height':'30px'}">{{tag.name}}
                                             </label>
                                         </div>
                                     </li>
@@ -67,7 +68,7 @@
                                             <label>
                                                 <input type="checkbox" ng-model="milestone.is_selected"
                                                        ng-change="isSelected()"
-                                                       name="milestone">{{milestone.name}}
+                                                       name="milestone">{{milestone.name + ' (' + milestone.description + ') '}}
                                             </label>
                                         </div>
                                     </li>
@@ -98,12 +99,12 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
     </section>
     <div>
 
-    <div class="footer-buttons">
+        <div class="footer-buttons">
             <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" data-title="Remove 0 item(s)"
                  data-toggle="tooltip"><i class="md md-delete"></i></div>
             <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top"

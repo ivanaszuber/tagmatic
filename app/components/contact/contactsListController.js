@@ -16,7 +16,7 @@ define(['appModule'], function (module) {
                 {
                     field: 'image_url',
                     displayName: '',
-                    width: 60,
+                    width: 50,
                     enableColumnMenu: false,
                     enableSorting: false,
                     cellTemplate: '<div class="ui-grid-cell-contents" class="f20"><i class="md md-settings-backup-restore yellow lighten-2 icon-color"></i></div>'

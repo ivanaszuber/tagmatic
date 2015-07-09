@@ -1,9 +1,33 @@
-.ui-grid-row,  .ui-grid-cell,  .ui-grid-cell .ui-grid-vertical-bar {
-    border-bottom:0px;
+#logo {
+    width: 80px;
+    margin-left: -70px;
+}
+
+.brand-logo {
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #E7E9E6;
+}
+
+.todo-widget .btn-round, .todo-app .btn-round {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.theme-pink .theme-secondary-text, .theme-pink a {
+    color: #4EAFBF;
+}
+
+.ui-grid-row, .ui-grid-cell, .ui-grid-cell .ui-grid-vertical-bar {
+    border-bottom: 0px;
 }
 
 .ui-grid-cell-contents {
-    padding-top:0px;
+    padding-top: 0px;
 }
 
 .ui-grid-header-cell .sortable {

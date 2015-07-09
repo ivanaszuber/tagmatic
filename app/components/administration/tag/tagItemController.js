@@ -19,5 +19,6 @@ define(['../../../appModule'], function (module) {
                 $scope.tag = tag;
             })
         }
+
     })
 });
