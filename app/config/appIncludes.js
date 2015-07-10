@@ -12,6 +12,7 @@ define([
     '../components/todo/todoModule',
     '../components/todo/todoController',
     '../components/todo/todoItemController',
+    '../components/todo/todoWidgetDirective',
     '../components/contact/contactsModule',
     '../components/contact/contactsListController',
     '../components/project/projectModule',
@@ -49,12 +50,8 @@ define([
     '../../lib/vendor/assets/js/directives/menu-link',
     '../../lib/vendor/assets/js/directives/navbar-hover',
     '../../lib/vendor/assets/js/directives/navbar-search',
-    '../../lib/vendor/assets/js/directives/todo-widget',
     '../../lib/vendor/assets/js/vendors/ripples',
     '../../lib/vendor/assets/js/app.filters',
-    //'../../lib/vendor/vendor/assets/js/vendors.min',
-    //'../../lib/vendor/vendor/assets/js/app.min',
-    '../../lib/vendor/assets/js/colors',
-    '../../lib/vendor/assets/js/app.filters'
+    '../../lib/vendor/assets/js/colors'
 
 ])

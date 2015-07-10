@@ -16,19 +16,21 @@
             </h3>
         </div>
         <div class="thumbnail" draggable="true" board-drag="task"
-             ng-repeat="task in column.tasks" style="margin-bottom: 10px;">
-            <div class="caption">
-                <h5><strong>{{task.title}}</strong></h5>
+             ng-repeat="task in column.tasks" style="margin-bottom: 10px;" >
+            <div class="caption" >
+                <h4><strong>{{task.title}}</strong></h4>
 
                 <p>{{task.description}}</p>
+                <h5>{{'Assigned to: '+ task.user.first_name + ' ' + task.user.last_name }}</h5>
+                <p>{{'Effort: ' + task.effort.name}}</p>
             </div>
-            <div ng-controller="issuesListController">
+            <div ng-controller="issuesListController" ng-style="{'background-color':task.tag.color, 'height':'50px'}">
 
-                <div class="btn btn-default  btn-sm" scroll-to="top"
+                <div class="btn btn-default  btn-sm btn-task" scroll-to="top"
                      data-title="Scroll to top" data-toggle="tooltip" ng-click="editIssue(task.id)"><i
                         class="md md-edit"></i>
                 </div>
-                <div class="btn btn-default btn-sm" data-title="Remove 0 item(s)"
+                <div class="btn btn-default btn-sm btn-task" data-title="Remove 0 item(s)"
                      data-toggle="tooltip"><i class="md md-delete" ng-click="deleteIssue(task.id)"></i></div>
             </div>
         </div>

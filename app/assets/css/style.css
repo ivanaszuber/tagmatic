@@ -22,6 +22,15 @@
     color: #4EAFBF;
 }
 
+.btn-task{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.white {
+    margin-left: -15px;
+}
+
 .ui-grid-row, .ui-grid-cell, .ui-grid-cell .ui-grid-vertical-bar {
     border-bottom: 0px;
 }

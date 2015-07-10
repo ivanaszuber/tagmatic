@@ -31,7 +31,7 @@ define([
             })
 
 
-        $urlRouterProvider.otherwise('/todo');
+        $urlRouterProvider.otherwise('/home');
 
     });
 

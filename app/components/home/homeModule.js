@@ -6,7 +6,6 @@ define([
     'angular-couch-potato',
     'angular-ui-router',
     'angular-resource'
-
 ], function (ng, couchPotato, _) {
     'use strict';
 

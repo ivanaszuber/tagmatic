@@ -20,7 +20,7 @@ define(['appModule', 'moment'], function (module, moment) {
         $scope.milestones = [];
         $scope.efforts = [];
         $scope.tasks = [];
-        $scope.filters = ['Tasks', 'Tags', 'Milestones', 'Efforts'];
+        $scope.filters = ['Tags', 'Milestones', 'Efforts'];
         $scope.activeFilter = 'Tasks';
 
         $scope.isActive = function (filter) {
@@ -30,13 +30,6 @@ define(['appModule', 'moment'], function (module, moment) {
         $rootScope.setFilter = function (filter) {
 
             $scope.activeFilter = filter;
-
-            if (filter == 'Tasks') {
-                issueService.getIssueList()
-                    .then(function (tasks) {
-                        $scope.tasks = tasks;
-                    });
-            }
 
             if (filter == 'Tags') {
                 tagService.getTagList().then(function (tags) {
@@ -58,7 +51,6 @@ define(['appModule', 'moment'], function (module, moment) {
         };
 
         $scope.createItem = function () {
-
 
             if ($scope.activeFilter == 'Tags') {
                 $modal.open({
@@ -163,21 +155,6 @@ define(['appModule', 'moment'], function (module, moment) {
 
         };
 
-        $scope.deleteItem = function () {
-
-            if ($scope.activeFilter == 'Tasks') {
-                todoService.deleteCompleted().then(function (data) {
-                    $scope.toDos = data;
-                })
-            }
-
-            if ($scope.activeFilter == 'Tags') {
-                tagService.deleteTag().then(function (data) {
-                    $scope.tags = data;
-                })
-            }
-
-        };
-        $scope.setFilter('Tasks');
+        $scope.setFilter('Tags');
     })
 });

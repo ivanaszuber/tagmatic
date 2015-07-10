@@ -16,6 +16,32 @@ define(['appModule'], function (module) {
             $scope.isLoading = true;
             columnService.getColumnList()
                 .then(function (data) {
+                    angular.forEach(data, function(column){
+                        $scope.tasks = column.tasks;
+                        angular.forEach($scope.tasks, function(task){
+                            tagService.getTag(task.tag_id).then(function(tag){
+                                task.tag = tag;
+
+                            });
+                            contactService.getContact(task.assigned_to_id).then(function(user){
+                                task.user = user
+                            });
+                            projectsService.getProject(task.project_id).then(function(project){
+                                task.project = project;
+                            });
+                            milestoneService.getMilestone(task.milestone_id).then(function(milestone){
+                                task.milestone = milestone;
+                            });
+                            effortService.getEffort(task.effort_id).then(function(effort){
+                                task.effort = effort;
+                            });
+                            $scope.tasks=[];
+                            $scope.tasks.push(task)
+                            data.tasks = $scope.tasks;
+                        })
+                    });
+
+
                     $scope.columns = data;
                     $scope.isLoading = false;
 
@@ -66,6 +92,10 @@ define(['appModule'], function (module) {
                 controller: function ($scope, $modalInstance) {
                     $scope.issue = {};
                     $scope.project = {};
+                    $scope.tag = {};
+                    $scope.milestone = {};
+                    $scope.effort = {};
+                    $scope.user = {};
                     $scope.submitted = false;
 
                     projectsService.getProjectList().then(function (data) {
@@ -97,6 +127,10 @@ define(['appModule'], function (module) {
                         if (isValid) {
                             $scope.issue.column_id = column;
                             $scope.issue.project_id = $scope.project.selected.id;
+                            $scope.issue.tag_id = $scope.tag.selected.id;
+                            $scope.issue.milestone_id = $scope.milestone.selected.id;
+                            $scope.issue.effort_id = $scope.effort.selected.id;
+                            $scope.issue.assigned_to_id = $scope.user.selected.id;
                             issueService.createIssue($scope.issue).then(function () {
                                 $modalInstance.close();
                                 $rootScope.refreshBoard();
@@ -119,6 +153,17 @@ define(['appModule'], function (module) {
                     $scope.refreshBoard();
                 })
             })
+        };
+
+        $scope.deleteIssue = function (id) {
+            issueService.getIssue(id)
+                .then(function (issue) {
+                    $scope.issue = issue;
+                    issueService.deleteIssue(id).then(function (data) {
+                        $scope.issues = data;
+                        $scope.refreshBoard();
+                    })
+                });
         };
 
         $scope.refreshBoard();

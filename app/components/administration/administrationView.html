@@ -11,27 +11,6 @@
 
                 </div>
                 <div class="no-padding white no-margin">
-                    <div ng-switch-when="Tasks">
-                        <div class="col-md-12 well white">
-                            <ul class="list-unstyled">
-                                <li ng-repeat="task in tasks">
-                                    <div class="checkbox">
-                                            <span class="pull-right">
-                                                <button type="button" class="btn btn-round btn-flat btn-default">
-                                                    <i class="md md-edit"></i>
-                                                </button>
-                                            </span>
-                                        <label>
-                                            <input type="checkbox" ng-model="task.is_selected"
-                                                   ng-change="isSelected()"
-                                                   name="task">{{task.title + ' ' + task.description}}
-                                        </label>
-
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     <div ng-switch-when="Tags">
                         <div class="col-md-12">
                             <div class="well white">
