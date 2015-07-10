@@ -4,7 +4,7 @@
 
 Tagmatic is a simple *project management app* for managing teams and projects. It has a nice interface for adding team members, projects, tasks, milestones, etc. The *interactive board* enables creation of custom columns (perfect for agile development), easy adding, editing and deleting tasks on the board, as well as dragging & dropping tasks to different columns (eg. from In Progress to Done).
 
-Dashboard contains various reports displaying sprint, project and team progress.
+Dashboard contains various reports displaying sprint, project and team progress (see screenshots at the bottom).
 
 This is version 0.0.1 of the app, meaning there's many more features to come. The demo is available at http://ivanaszuber.github.io/tagmatic-frontend/demo and contains *some* of the features (CRUD operations are obviously disabled).
 
@@ -13,18 +13,6 @@ This is version 0.0.1 of the app, meaning there's many more features to come. Th
 Tagmatic is an *AngularJS* app conecting to the *Flask* backend which implements the Web service API. The backend is available at  https://github.com/ivanaszuber/tagmatic-backend.
 
 Other libraries used include: RequireJS, angular-ui-router, angular-ui-grid, d3, c3, lodash, karma, jasmine... See bower.json for the full list of dependencies.
-
-## Screenshots
-
-Here are some screenshots of the app. You can also check out the demo at http://ivanaszuber.github.io/tagmatic-frontend/demo
-
-### Board
-
-![](/demo/img/Tagmatic1.PNG)
-
-### Dashboard
-
-![](/demo/img/Tagmatic2.PNG)
 
 ## Installation
 
@@ -89,3 +77,27 @@ cd tagmatic-frontend
 npm install
 ```
 Start the karma server. This will execute all tests under the `tagmatic-frontend/test` folder.
+
+## Screenshots
+
+Here are some screenshots of the app. You can also check out the demo at http://ivanaszuber.github.io/tagmatic-frontend/demo
+
+### Board
+
+![](/demo/img/Tagmatic1.PNG)
+
+### Dashboard
+
+![](/demo/img/Tagmatic2.PNG)
+
+### Team Page
+
+![](/demo/img/Tagmatic3.PNG)
+
+### Create New Tag
+
+![](/demo/img/Tagmatic4.PNG)
+
+### Create New Task
+
+![](/demo/img/Tagmatic5.PNG)
