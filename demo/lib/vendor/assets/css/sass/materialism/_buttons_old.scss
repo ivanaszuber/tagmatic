@@ -1,0 +1,170 @@
+
+.btn-secondary {
+  @include button-variant($theme-secondary-text, $theme-secondary, transparent);
+}
+
+
+.btn-round {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-image:none;
+  padding:0px;
+  text-align:center;
+  line-height:50px;
+  position:relative;
+}
+
+.btn-round-sm {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-image:none;
+  padding:0px;
+  text-align:center;
+  line-height:40px;
+}
+
+.btn-flat {
+  @include box-shadow(none);
+  border: none;
+
+
+  &:active {
+    @include transition(all 0.4s);
+  }
+  &:hover {
+    @include box-shadow(none);
+    border-color: rgba(0, 0, 0, 0);
+  }
+  &:focus {
+    @include box-shadow(none);
+    border-color: rgba(0, 0, 0, 0);
+  }
+}
+
+
+// Buttons ====================================================================
+
+@mixin btn($class, $bg){
+  .btn-#{$class} {
+    background-size: 200%;
+    background-position: 50%;
+
+    //@extend #{$bg};
+    background-color: $bg;
+
+
+    &:hover {
+      background-color: darken($bg, 5%);
+    }
+
+
+    &:active {
+      background-size: 1000%;
+      @include box-shadow(2px 2px 2px rgba(0,0,0,.3));
+      background-color: darken($bg, 7%);
+    }
+  }
+}
+
+
+
+.btn {
+  position: relative;
+  border: 0;
+  text-transform: uppercase;
+  @include box-shadow(1px 1px 2px rgba(0,0,0,.3));
+  @include transition(all 0.2s);
+
+
+  &:hover {
+    @include box-shadow(0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15));
+    background-color: #FFF;
+    border-color: rgba(0, 0, 0, 0);
+  }
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &-link {
+    $bg: color('grey', 'lighten-3');
+    @extend .theme-text;
+
+    @include box-shadow(none);
+    background-size: 200%;
+    background-position: 50%;
+    @include transition(all 0.2s);
+
+    &:focus {
+      text-decoration: none;
+      @extend .theme-text-darken-1;
+    }
+
+    &:hover {
+      @extend .theme-text-darken-1;
+      text-decoration: none;
+      @include box-shadow(none);
+      background-color: $bg;
+    }
+  }
+
+  &-default.disabled {
+    border: 1px solid $btn-default-border;
+  }
+}
+
+
+
+.btn-primary {
+  @extend .theme-bg;
+
+  &:hover {
+    @extend .theme-bg-darken-1;
+  }
+  &:active {
+    @extend .theme-bg;
+  }
+  &:focus {
+    @extend .theme-bg-accent-4;
+  }
+
+  &.disabled {
+    @extend .theme-bg-lighten-3;
+  }
+}
+
+@include btn(default, $btn-default-bg);
+@include btn(success, $btn-success-bg);
+@include btn(info, $btn-info-bg);
+@include btn(warning, $btn-warning-bg);
+@include btn(danger, $btn-danger-bg);
+
+
+
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: 0;
+  }
+
+  &-vertical {
+    > .btn + .btn,
+    > .btn + .btn-group,
+    > .btn-group + .btn,
+    > .btn-group + .btn-group {
+      margin-top: 0;
+    }
+  }
+}
+
