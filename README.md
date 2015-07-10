@@ -8,6 +8,8 @@ Dashboard contains various reports displaying sprint, project and team progress 
 
 This is version 0.0.1 of the app, meaning there's many more features to come. The demo is available at http://ivanaszuber.github.io/tagmatic-frontend/demo and contains *some* of the features (CRUD operations are obviously disabled).
 
+**Source code is located in the `app` folder and has been 'modularized'. Each component is located in its own folder.**
+
 ## Technology Used
 
 Tagmatic is an **AngularJS** app conecting to the **Flask** backend which implements the Web service API. The backend is available at  https://github.com/ivanaszuber/tagmatic-backend.
