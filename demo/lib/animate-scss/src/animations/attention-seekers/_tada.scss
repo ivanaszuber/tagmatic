@@ -1,0 +1,45 @@
+$keyframe-name: $name-tada;
+$class-name: namespace($name-tada);
+
+@mixin animation-tada($prefix: '') {
+    0% {
+        #{$prefix}transform: scale3d(1, 1, 1);
+    }
+    10%, 20% {
+        #{$prefix}transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%, 50%, 70%, 90% {
+        #{$prefix}transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%, 60%, 80% {
+        #{$prefix}transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+        #{$prefix}transform: scale3d(1, 1, 1);
+    }
+}
+
+@if useModule($enable-tada) {
+    @if $enable-prefixes == true {
+        @-webkit-keyframes #{$keyframe-name} {
+            @include animation-tada($prefix-webkit);
+        }
+
+        @-moz-keyframes #{$keyframe-name} {
+            @include animation-tada($prefix-moz);
+        }
+
+        @-o-keyframes #{$keyframe-name} {
+            @include animation-tada($prefix-opera);
+        }
+    }
+
+    @keyframes #{$keyframe-name} {
+        @include animation-tada();
+    }
+
+    .#{$class-name} {
+        @include animate-prefixer(animation-name, $keyframe-name);
+    }
+
+}

@@ -1,0 +1,41 @@
+$keyframe-name: $name-bounce-out-up;
+$class-name: namespace($name-bounce-out-up);
+
+@mixin animate-bounce-out-up($prefix: '') {
+    20% {
+        #{$prefix}transform: translate3d(0, -10px, 0);
+    }
+    40%, 45% {
+        opacity: 1;
+        #{$prefix}transform: translate3d(0, 20px, 0);
+    }
+    100% {
+        opacity: 0;
+        #{$prefix}transform: translate3d(0, -2000px, 0);
+    }
+}
+
+@if useModule($enable-bounce-out-up) {
+    @if $enable-prefixes == true {
+        @-webkit-keyframes #{$keyframe-name} {
+            @include animate-bounce-out-up($prefix-webkit);
+        }
+
+        @-moz-keyframes #{$keyframe-name} {
+            @include animate-bounce-out-up($prefix-moz);
+        }
+
+        @-o-keyframes #{$keyframe-name} {
+            @include animate-bounce-out-up($prefix-opera);
+        }
+    }
+
+    @keyframes #{$keyframe-name} {
+        @include animate-bounce-out-up();
+    }
+
+    .#{$class-name} {
+        @include animate-prefixer(animation-name, $keyframe-name);
+    }
+
+}
