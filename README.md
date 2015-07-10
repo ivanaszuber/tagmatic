@@ -2,7 +2,7 @@
 
 ## Description
 
-Tagmatic is a simple *project management app* for managing teams and projects. It has a nice interface for adding team members, projects, tasks, milestones, etc. The *interactive board* enables creation of custom columns (perfect for agile development), easy adding, editing and deleting tasks on the board, as well as dragging & dropping tasks to different columns (eg. from In Progress to Done).
+Tagmatic is a simple **project management app** for managing teams and projects. It has a nice interface for adding team members, projects, tasks, milestones, etc. The *interactive board* enables creation of custom columns (perfect for agile development), easy adding, editing and deleting tasks on the board, as well as dragging & dropping tasks to different columns (eg. from In Progress to Done).
 
 Dashboard contains various reports displaying sprint, project and team progress (see screenshots at the bottom).
 
@@ -10,13 +10,13 @@ This is version 0.0.1 of the app, meaning there's many more features to come. Th
 
 ## Technology Used
 
-Tagmatic is an *AngularJS* app conecting to the *Flask* backend which implements the Web service API. The backend is available at  https://github.com/ivanaszuber/tagmatic-backend.
+Tagmatic is an **AngularJS** app conecting to the **Flask** backend which implements the Web service API. The backend is available at  https://github.com/ivanaszuber/tagmatic-backend.
 
-Other libraries used include: RequireJS, angular-ui-router, angular-ui-grid, d3, c3, lodash, karma, jasmine... See bower.json for the full list of dependencies.
+Other libraries used include: **RequireJS**, **angular-ui-router**, **angular-ui-grid**, **d3**, **c3**, **lodash**, **karma**, **jasmine**... See bower.json for the full list of dependencies.
 
 ## Installation
 
-If you'd like to install *Tagmatic* locally checkout the `tagmatic-backend` repository, install it's requirements and create the database with the following commands:
+If you'd like to install **Tagmatic** locally checkout the `tagmatic-backend` repository, install its requirements and create the database with the following commands:
 
 ```
 git clone git@github.com:ivanaszuber/tagmatic-backend.git tagmatic-backend/
@@ -96,7 +96,7 @@ Here are some screenshots of the app. You can also check out the demo at http://
 
 ### Create New Tag
 
-![](/demo/img/Tagmatic4.PNG)
+![](/demo/img/Tagmatiic4.PNG)
 
 ### Create New Task
 
