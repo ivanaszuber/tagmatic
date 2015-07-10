@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../lib/angular-ui-grid/ui-grid.css">
     <link rel="stylesheet" type="text/css" href="../lib/angular-ui-select/dist/select.css">
     <link rel="stylesheet" type="text/css" href="../lib/angular-bootstrap-colorpicker/css/colorpicker.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../app/assets/css/style.css">
     <!-- endbuild -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -47,7 +47,7 @@
 
 
     <!-- #FAVICONS -->
-    <link rel="shortcut icon" href="assets/img/logo-bird.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../app/assets/img/logo-bird.png" type="image/x-icon">
 
     <!-- #GOOGLE FONT -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
@@ -63,7 +63,7 @@
     <!-- ngInclude:  --><div ng-include="" src="'components/layout/sidebar/sidebarView.html'" class="ng-scope"><aside class="sidebar fixed ng-scope">
     <div class="brand-logo">
         <div id="logo">
-            <img src="assets/img/logo-bird.png" width="60px">
+            <img src="../app/assets/img/logo-bird.png" width="60px">
         </div>
         Tagmatic
     </div>
@@ -77,28 +77,28 @@
         </div>
     </div>
     <ul class="menu-links">
-        <li menu-link="" icon="md md-camera" class="ng-isolate-scope" href="demo/home.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/home.html" class="active"><i
+        <li menu-link="" icon="md md-camera" class="ng-isolate-scope" href="index.html">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="index.html" class="active"><i
                     class="md md-camera"></i>&nbsp;<span class="ng-scope">HOME</span></a>
         </li>
-        <li menu-link="" icon="md md-account-child" class="ng-isolate-scope" href="demo/contact.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/contact.html"><i
+        <li menu-link="" icon="md md-account-child" class="ng-isolate-scope" href="#">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="#"><i
                     class="md md-account-child"></i>&nbsp;<span class="ng-scope">TEAM</span></a>
         </li>
-        <li menu-link="" icon="md md-wallet-travel" class="ng-isolate-scope" href="demo/project.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/project.html"><i
+        <li menu-link="" icon="md md-wallet-travel" class="ng-isolate-scope" href="#">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="#"><i
                     class="md md-wallet-travel"></i>&nbsp;<span class="ng-scope">PROJECTS</span></a>
         </li>
-        <li menu-link="" icon="md md-list" class="ng-isolate-scope" href="demo/administration.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/administration.html"><i
+        <li menu-link="" icon="md md-list" class="ng-isolate-scope" href="administration.html">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="administration.html"><i
                     class="md md-list"></i>&nbsp;<span class="ng-scope">ADMINISTRATION</span></a>
         </li>
-        <li menu-link="" d icon="md md-dashboard" class="ng-isolate-scope" href="demo/board.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/board.html"><i
+        <li menu-link="" d icon="md md-dashboard" class="ng-isolate-scope" href="board.html">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="board.html"><i
                     class="md md-dashboard"></i>&nbsp;<span class="ng-scope">BOARD</span></a>
         </li>
-        <li menu-link="" icon="md md-assignment" class="ng-isolate-scope" href="demo/todo.html">
-            <a ng-transclude="" ng-class="{active: isSelected()}" href="demo/todo.html"><i
+        <li menu-link="" icon="md md-assignment" class="ng-isolate-scope" href="todo.html">
+            <a ng-transclude="" ng-class="{active: isSelected()}" href="todo.html"><i
                     class="md md-assignment"></i>&nbsp;<span class="ng-scope">TODO</span></a>
         </li>
     </ul>
