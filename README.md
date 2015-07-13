@@ -6,7 +6,7 @@ Tagmatic is a simple **project management app** for managing teams and projects.
 
 Dashboard contains various reports displaying sprint, project and team progress (see screenshots at the bottom).
 
-This is **version 0.0.1** of the app, meaning there are many more features to come. The demo is available at http://ivanaszuber.github.io/tagmatic-frontend/demo and contains *some* of the features.
+This is **version 0.0.1** of the app, meaning there are many more features to come. The demo is available at http://ivanaszuber.github.io/tagmatic/demo and contains *some* of the features.
 
 **Source code is located in the `app` folder. Each component is located in its own folder.**
 
@@ -82,7 +82,7 @@ Start the karma server. This will execute all tests under the `tagmatic-frontend
 
 ## Screenshots
 
-Here are some screenshots of the app. You can also check out the demo at http://ivanaszuber.github.io/tagmatic-frontend/demo
+Here are some screenshots of the app. You can also check out the demo at http://ivanaszuber.github.io/tagmatic/demo
 
 ### Board
 
