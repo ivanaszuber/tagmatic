@@ -14,7 +14,7 @@ This is **version 0.0.1** of the app, meaning there are many more features to co
 
 Tagmatic is an **AngularJS** app conecting to the **Flask** backend which implements the Web service API. The backend is available at  https://github.com/ivanaszuber/tagmatic-backend.
 
-Other libraries used include: **RequireJS**, **angular-ui-router**, **angular-ui-grid**, **d3**, **c3**, **lodash**, **karma**, **jasmine**... See bower.json for the full list of dependencies.
+Other libraries used include: **RequireJS**, **angular-ui-router**, **angular-couch-potato**, **angular-ui-grid**, **d3**, **c3**, **lodash**, **karma**, **jasmine**... See bower.json for the full list of dependencies.
 
 ## Installation
 
